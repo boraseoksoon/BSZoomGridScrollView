@@ -20,7 +20,7 @@ struct ContentView: View {
     
     var imagesToZoom: [UIImage] = {
         var images = [UIImage]()
-        for i in 0...24 {
+        for i in 0...29 {
             images.append(UIImage(named: "s\(i)") ?? UIImage())
         }
         return images

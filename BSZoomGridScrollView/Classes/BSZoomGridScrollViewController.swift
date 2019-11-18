@@ -25,17 +25,11 @@
 //  THE SOFTWARE.
 
 
-///
-/// Although it is strongly intended and designed to be used for SwiftUI base project,
-/// You can use BSZoomGridBaseView in UIKit easily.
-/// To use BSZoomGridUIScrollView(UIScrollView base) in a UIViewController of UIKit project,
-/// Please, Follow steps written in the comments with Icon that will help you pay attention like 😀.
-///
 import UIKit
 
 ///
 /// 😁 #Step1: Inherits BSZoomGridBaseViewController in order to inject constructor including instances variables,
-/// It does not do any important tasks.
+/// Actually, it does not do any important tasks.
 /// So, you can ignore inheritance. By doing so, however, currently you can't change configuration.
 public final class BSZoomGridScrollViewController: BSZoomGridBaseViewController {
     ///
@@ -45,76 +39,30 @@ public final class BSZoomGridScrollViewController: BSZoomGridBaseViewController 
     // MARK: - Instance Variables
     ///
     
-    /// To programmtically scroll up and down, both two buttons are used.
+    /// To programmtically disable scroll view,
     /// target & action is wrapped by closure.
     /// FYI: UIControl+Extension
-    private lazy var upButton: UIButton = { [unowned self] in
+    private lazy var disableOrNotButton: UIButton = { [unowned self] in
         let b = UIButton()
-        b.frame = CGRect(x: UIScreen.main.bounds.width - (UIScreen.main.bounds.width * 0.20),
+        b.frame = CGRect(x: UIScreen.main.bounds.width - (UIScreen.main.bounds.width * 0.25),
                               y: UIScreen.main.bounds.height - (UIScreen.main.bounds.height * 0.25),
                               width: BSZoomGridUIScrollView.ICON_WIDTH,
                               height: BSZoomGridUIScrollView.ICON_WIDTH)
         
         b.backgroundColor = .white
-        b.setBackgroundImage(UIImage(systemName: "arrow.up.circle.fill"),
+        b.setBackgroundImage(UIImage(systemName: "circle"),
                                   for: .normal)
         b.tintColor = .black
         b.layer.cornerRadius = b.frame.size.width / 2.0
         b.clipsToBounds = true
          
         b.take(for: .touchUpInside) { [unowned self] in
-            guard self.scrollViewContentOffsetY >= 0 + self.chunk
-                else {
-                    return
-            }
-
-            let point = CGPoint(x: 0, y: self.scrollViewContentOffsetY - self.chunk)
-            self.zoomGridScrollView.setContentOffset(point, animated: true)
+            self.zoomGridScrollView.isScrollEnabled = !self.zoomGridScrollView.isScrollEnabled
+            print("self.zoomGridScrollView.isScrollEnabled : ", self.zoomGridScrollView.isScrollEnabled)
         }
         
         return b
     }()
-    
-    private lazy var downButton: UIButton = { [unowned self] in
-        let b = UIButton()
-        b.frame = CGRect(x: UIScreen.main.bounds.width - (UIScreen.main.bounds.width * 0.20),
-                              y: UIScreen.main.bounds.height - (UIScreen.main.bounds.height * 0.15),
-                              width: BSZoomGridUIScrollView.ICON_WIDTH,
-                              height: BSZoomGridUIScrollView.ICON_WIDTH)
-        
-        b.backgroundColor = .white
-        b.setBackgroundImage(UIImage(systemName: "arrow.down.circle.fill"),
-                                  for: .normal)
-        b.tintColor = .black
-        b.layer.cornerRadius = b.frame.size.width / 2.0
-        
-        b.clipsToBounds = true
-
-        b.take(for: .touchUpInside) { [unowned self] in
-            guard self.scrollViewContentOffsetY <= self.scrollViewContentHeight - self.chunk
-                else {
-                    return
-            }
-
-            let point = CGPoint(x: 0, y: self.scrollViewContentOffsetY + self.chunk)
-            self.zoomGridScrollView.setContentOffset(point, animated: true)
-        }
-        
-        return b
-    }()
-    
-    /// Helper instance variables
-    var chunk: CGFloat {
-        self.zoomGridScrollView.contentSize.height / 4.0
-    }
-    
-    var scrollViewContentHeight: CGFloat {
-        self.zoomGridScrollView.contentSize.height
-    }
-    
-    var scrollViewContentOffsetY: CGFloat {
-        self.zoomGridScrollView.contentOffset.y
-    }
     
     ///
     /// 😊 #Step3: Init BSZoomGridUIScrollView, ready to use!
@@ -137,7 +85,6 @@ public final class BSZoomGridScrollViewController: BSZoomGridBaseViewController 
         /// 😎 # Step4: That's it. well done!
         /// Add all views created so far.
         self.view.addSubview(self.zoomGridScrollView)
-        self.view.addSubview(self.upButton)
-        self.view.addSubview(self.downButton)
+        self.view.addSubview(self.disableOrNotButton)
     }
 }

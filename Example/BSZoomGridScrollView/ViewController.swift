@@ -31,9 +31,9 @@ class ViewController: UIViewController {
         /// please refer to comments in SwiftUI directory -> ContentView.swift
         ///
         return BSZoomGridScrollViewController(imagesToZoom: imagesToZoom,
-                                              powerOfZoomBounce: .regular,
-                                              numberOfColumns: 200,
-                                              numberOfRows: 10,
+                                              powerOfZoomBounce: .crazy,
+                                              numberOfColumns: 70,
+                                              numberOfRows: 25,
                                               didLongPressItem: { selectedImage in
                                                 print("on long press : ", selectedImage)
                                                 /// Grab an image user end up choosing.
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     ///
     private var imagesToZoom: [UIImage] = {
         var images = [UIImage]()
-        for i in 0...24 {
+        for i in 0...29 {
             images.append(UIImage(named: "s\(i)") ?? UIImage())
         }
         return images

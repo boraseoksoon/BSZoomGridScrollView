@@ -200,7 +200,7 @@ class BSZoomGridUIScrollView: UIScrollView {
     // MARK: - Constants
     /// Private Constants
     static let SCROLL_CHECK_DELAY: Double = 0.25
-    static let ICON_WIDTH: CGFloat = 44.0
+    static let ICON_WIDTH: CGFloat = 77.0
 }
 
 // MARK: - Target, Action
@@ -218,6 +218,9 @@ extension BSZoomGridUIScrollView {
         }
     }
 }
+
+// MARK: - Public instance methods
+///
 
 // MARK: - Private instance methods
 ///
@@ -268,7 +271,7 @@ extension BSZoomGridUIScrollView {
                            animations: {
                             cellView.layer.transform = CATransform3DIdentity
             }, completion: { (_) in
-                self.isScrollEnabled = true
+                // self.isScrollEnabled = true
                 
                 if let image = cellView.image {
                     completion(image)
@@ -357,6 +360,6 @@ extension BSZoomGridUIScrollView: UIGestureRecognizerDelegate {
         // true -> allow both,
         // false -> disable scrollview.
         
-        return false
+        return true
     }
 }
