@@ -1,0 +1,22 @@
+{
+  "name": "BSZoomGridScrollView",
+  "version": "0.1.0",
+  "summary": "A short description of BSZoomGridScrollView.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/boraseoksoon/BSZoomGridScrollView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "boraseoksoon": "boraseoksoon@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/boraseoksoon/BSZoomGridScrollView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "BSZoomGridScrollView/Classes/**/*"
+}
