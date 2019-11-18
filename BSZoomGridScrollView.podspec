@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BSZoomGridScrollView'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Tracking your touch, BSZoomGridScrollView zooms in subviews in the grid-style UIScrollView'
 
   s.description      = 'Boooooring grid-scrollview that is only good at zooming series of views continuously, tracking your touch..'
