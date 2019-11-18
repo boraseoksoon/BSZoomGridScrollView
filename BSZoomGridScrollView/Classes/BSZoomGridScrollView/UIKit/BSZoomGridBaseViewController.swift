@@ -26,7 +26,7 @@
 
 import UIKit
 
-open class BSZoomGridBaseViewController: UIViewController {
+public class BSZoomGridBaseViewController: UIViewController {
     // MARK: - Initializers
     /// Using constuctor Dependency Injection, all initialization should be done in the constructor.
     ///

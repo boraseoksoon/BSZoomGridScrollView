@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		47ACBDC223832B8D00B9AA7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ACBDC123832B8D00B9AA7A /* ContentView.swift */; };
 		47ACBDC423832BBB00B9AA7A /* ShowingSelectedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ACBDC323832BBB00B9AA7A /* ShowingSelectedImageView.swift */; };
+		47ACBDCA23833E9700B9AA7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47ACBDC923833E9700B9AA7A /* Assets.xcassets */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
-		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		D956E02DB93E9ABBD83C211B /* Pods_BSZoomGridScrollView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FB67011584A1E129F353B4 /* Pods_BSZoomGridScrollView_Example.framework */; };
 /* End PBXBuildFile section */
@@ -22,13 +22,13 @@
 		22F65D7D5DA9FEE8B787DEA7 /* Pods_BSZoomGridScrollView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BSZoomGridScrollView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47ACBDC123832B8D00B9AA7A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		47ACBDC323832BBB00B9AA7A /* ShowingSelectedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowingSelectedImageView.swift; sourceTree = "<group>"; };
+		47ACBDC923833E9700B9AA7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53FB67011584A1E129F353B4 /* Pods_BSZoomGridScrollView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BSZoomGridScrollView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* BSZoomGridScrollView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSZoomGridScrollView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
@@ -52,6 +52,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47ACBDCB23833EA100B9AA7A /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				47ACBDC123832B8D00B9AA7A /* ContentView.swift */,
+				47ACBDC323832BBB00B9AA7A /* ShowingSelectedImageView.swift */,
+			);
+			name = SwiftUI;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -75,12 +84,11 @@
 		607FACD21AFB9204008FA782 /* Example for BSZoomGridScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				47ACBDCB23833EA100B9AA7A /* SwiftUI */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				47ACBDC123832B8D00B9AA7A /* ContentView.swift */,
-				47ACBDC323832BBB00B9AA7A /* ShowingSelectedImageView.swift */,
+				47ACBDC923833E9700B9AA7A /* Assets.xcassets */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
@@ -205,8 +213,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				47ACBDCA23833E9700B9AA7A /* Assets.xcassets in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
