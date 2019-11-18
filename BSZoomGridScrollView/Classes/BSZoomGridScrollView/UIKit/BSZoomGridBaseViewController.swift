@@ -26,7 +26,7 @@
 
 import UIKit
 
-class BSZoomGridBaseViewController: UIViewController {
+open class BSZoomGridBaseViewController: UIViewController {
     // MARK: - Initializers
     /// Using constuctor Dependency Injection, all initialization should be done in the constructor.
     ///
@@ -40,12 +40,12 @@ class BSZoomGridBaseViewController: UIViewController {
     ///   - didFinishDraggingOnItem: closure that will indicates
     ///                              which UIImage is decided to be chosen, by a end of pan gesture touch.
     /// - Returns: Initializer
-    init(imagesToZoom: [UIImage],
-         powerOfZoomBounce: ZoomBounceRatio,
-         numberOfColumns: Int,
-         numberOfRows: Int,
-         didLongPressItem: ((_: UIImage) -> Void)?,
-         didFinishDraggingOnItem: ((_: UIImage) -> Void)?) {
+    public init(imagesToZoom: [UIImage],
+                powerOfZoomBounce: ZoomBounceRatio,
+                numberOfColumns: Int,
+                numberOfRows: Int,
+                didLongPressItem: ((_: UIImage) -> Void)?,
+                didFinishDraggingOnItem: ((_: UIImage) -> Void)?) {
         
         guard imagesToZoom.count > 0 else {
             fatalError("At least, image array containing more than one image should be provided!")
@@ -64,7 +64,7 @@ class BSZoomGridBaseViewController: UIViewController {
         self.numberOfRows = numberOfRows
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("""
                 init(coder:) has not been implemented.\n
                 Creating BSZoomGridScrollViewController programmatically is only allowed.
@@ -81,7 +81,7 @@ class BSZoomGridBaseViewController: UIViewController {
     internal private(set) var powerOfZoomBounce: ZoomBounceRatio
     
     private var _numberOfColumns: CGFloat = 70.0
-    private(set) var numberOfColumns: Int {
+    internal private(set) var numberOfColumns: Int {
         get {
             return Int(_numberOfColumns)
         }
@@ -91,7 +91,7 @@ class BSZoomGridBaseViewController: UIViewController {
     }
     
     private var _numberOfRows: CGFloat = 30.0
-    private(set) var numberOfRows: Int {
+    internal private(set) var numberOfRows: Int {
         get {
             return Int(_numberOfRows)
         }

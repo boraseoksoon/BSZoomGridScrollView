@@ -6,10 +6,19 @@
 //  Copyright (c) 2019 boraseoksoon. All rights reserved.
 //
 
+import SwiftUI
 import UIKit
 
-class ViewController: UIViewController {
+import BSZoomGridScrollView
 
+class ViewController: UIViewController {
+    @IBAction func presentForUIKit(_ sender: Any) {
+        
+    }
+    
+    @IBAction func presentForSwiftUI(_ sender: Any) {
+        // let vc = UIHostingController(rootView: BSZoomGridScrollView())
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,6 +28,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 }
 

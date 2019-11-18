@@ -37,7 +37,7 @@ import UIKit
 /// 😁 #Step1: Inherits BSZoomGridBaseViewController in order to inject constructor including instances variables,
 /// It does not do any important tasks.
 /// So, you can ignore inheritance. By doing so, however, currently you can't change configuration.
-final class BSZoomGridScrollViewController: BSZoomGridBaseViewController {
+public final class BSZoomGridScrollViewController: BSZoomGridBaseViewController {
     ///
     /// 🤔 #Step2: These buttons are not a mandatory,
     /// but it will help us scroll up and down in the grid scroll view.
@@ -130,7 +130,7 @@ final class BSZoomGridScrollViewController: BSZoomGridBaseViewController {
     
     // MARK: - View LifeCycle Methods
     ///
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         ///

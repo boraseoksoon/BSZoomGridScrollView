@@ -2,10 +2,5 @@ use_frameworks!
 
 target 'BSZoomGridScrollView_Example' do
   pod 'BSZoomGridScrollView', :path => '../'
-
-  target 'BSZoomGridScrollView_Tests' do
-    inherit! :search_paths
-
-    
-  end
+  
 end

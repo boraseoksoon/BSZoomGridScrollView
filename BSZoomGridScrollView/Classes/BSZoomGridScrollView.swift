@@ -27,20 +27,53 @@
 import SwiftUI
 import UIKit
 
-struct BSZoomGridScrollView: UIViewControllerRepresentable {
-    let imagesToZoom: [UIImage]
-    var powerOfZoomBounce: ZoomBounceRatio
-    var numberOfColumns: Int
-    var numberOfRows: Int
+///
+/// UIKit -> SwiftUI Coordinator
+///
+public struct BSZoomGridScrollView {
+    // MARK: - Initializer
+    ///
+    public init(imagesToZoom: [UIImage],
+                powerOfZoomBounce: ZoomBounceRatio,
+                numberOfColumns: Int,
+                numberOfRows: Int,
+                didLongPressItem: ((_: UIImage) -> Void)?,
+                didFinishDraggingOnItem: ((_: UIImage) -> Void)?) {
+        guard imagesToZoom.count > 0 else {
+            fatalError("At least, image array containing more than one image should be provided!")
+        }
 
-    var didLongPressItem: ((_: UIImage) -> Void)?
-    var didFinishDraggingOnItem: ((_: UIImage) -> Void)?
+        self.didLongPressItem = didLongPressItem
+        self.didFinishDraggingOnItem = didFinishDraggingOnItem
+        
+        self.imagesToZoom = imagesToZoom
+        self.powerOfZoomBounce = powerOfZoomBounce
+        
+
+        self.numberOfColumns = numberOfColumns
+        self.numberOfRows = numberOfRows
+    }
     
-    func makeCoordinator() -> Coordinator {
+    // MARK: - Instance Variables
+    ///
+    private let imagesToZoom: [UIImage]
+    private let powerOfZoomBounce: ZoomBounceRatio
+    private let numberOfColumns: Int
+    private let numberOfRows: Int
+
+    private let didLongPressItem: ((_: UIImage) -> Void)?
+    private let didFinishDraggingOnItem: ((_: UIImage) -> Void)?
+}
+
+// MARK: - Public Methods
+///
+extension BSZoomGridScrollView: UIViewControllerRepresentable {
+    
+    public func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
 
-    func makeUIViewController(context: Context) -> BSZoomGridScrollViewController {
+    public func makeUIViewController(context: Context) -> BSZoomGridScrollViewController {
         let scrollViewController = BSZoomGridScrollViewController(imagesToZoom: imagesToZoom,
                                                                   powerOfZoomBounce: self.powerOfZoomBounce,
                                                                   numberOfColumns: self.numberOfColumns,
@@ -50,14 +83,14 @@ struct BSZoomGridScrollView: UIViewControllerRepresentable {
         return scrollViewController
     }
 
-    func updateUIViewController(_ vc: BSZoomGridScrollViewController, context: Context) {
+    public func updateUIViewController(_ vc: BSZoomGridScrollViewController, context: Context) {
         //
     }
 
-    class Coordinator: NSObject {
-        var parent: BSZoomGridScrollView
+    public class Coordinator: NSObject {
+        private var parent: BSZoomGridScrollView
 
-        init(_ pageViewController: BSZoomGridScrollView) {
+        public init(_ pageViewController: BSZoomGridScrollView) {
             self.parent = pageViewController
         }
     }

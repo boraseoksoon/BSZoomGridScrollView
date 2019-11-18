@@ -28,7 +28,7 @@ import Foundation
 
 // MARK: - Enumeration
 /// it will decide bounce animation ratio. it should be only used and injected in the constructor.
-enum ZoomBounceRatio {
+public enum ZoomBounceRatio {
     case weak
     case regular
     case strong
