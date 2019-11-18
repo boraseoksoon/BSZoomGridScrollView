@@ -15,9 +15,7 @@ BSZoomGridScrollView is a powerful, pure swift iOS UI framework that provides th
 - [x] Return selected image by long press, pan gesture out of box. 
 - [x] Grid UI configuration.
 
-<img src="https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2Fgrid-optimize.gif?alt=media&token=59dd94e7-ed0c-45b8-b8bb-d137bcf8959f" width=480>
-<br>
-
+![Alt Text](https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2Fgrid-optimize.gif?alt=media&token=59dd94e7-ed0c-45b8-b8bb-d137bcf8959f)
 
 <img src="https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2FBSZoomGridScrollView.png?alt=media&token=062257fc-2aeb-498f-aa33-b179f5e1656b" width=240>
 <br>
