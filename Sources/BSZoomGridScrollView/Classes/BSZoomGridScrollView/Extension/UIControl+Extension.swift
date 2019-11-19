@@ -6,6 +6,7 @@
 //  Copyright © 2019 Seoksoon Jang. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 
 @objc private class ClosureBox: NSObject {
@@ -27,3 +28,5 @@ extension UIControl {
         objc_setAssociatedObject(self, "[\(arc4random())]", container, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
     }
 }
+
+#endif
