@@ -24,7 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#if os(iOS)
+
 import UIKit
 
 ///
@@ -48,15 +48,16 @@ public final class BSZoomGridScrollViewController: BSZoomGridBaseViewController 
                               y: UIScreen.main.bounds.height - (UIScreen.main.bounds.height * 0.25),
                               width: BSZoomGridUIScrollView.ICON_WIDTH,
                               height: BSZoomGridUIScrollView.ICON_WIDTH)
-        
-        b.backgroundColor = .white
+                
         b.setBackgroundImage(UIImage(systemName: "circle"),
                                   for: .normal)
         
         b.setBackgroundImage(UIImage(systemName: "circle.fill"),
                              for: .highlighted)
         
-        b.tintColor = .black
+        b.tintColor = self.scrollEnableButtonTintColor
+        b.backgroundColor = self.scrollEnableButtonBackgroundColor
+        
         b.layer.cornerRadius = b.frame.size.width / 2.0
         b.clipsToBounds = true
          
@@ -68,8 +69,6 @@ public final class BSZoomGridScrollViewController: BSZoomGridBaseViewController 
                     ? "Scroll enabled. \(RandomEmoji())" : "Scroll locked. \(RandomEmoji())",
                 font: .boldSystemFont(ofSize: 16)
             )
-            
-            
         }
         
         return b
@@ -79,10 +78,11 @@ public final class BSZoomGridScrollViewController: BSZoomGridBaseViewController 
     /// 😊 #Step3: Init BSZoomGridUIScrollView, ready to use!
     private lazy var zoomGridScrollView: BSZoomGridUIScrollView = { [unowned self] in
         return BSZoomGridUIScrollView(parentView: self.view,
-                                      imagesToZoom: self.imagesToZoom,
+                                      itemsToZoom: self.itemsToZoom,
                                       powerOfZoomBounce: self.powerOfZoomBounce,
                                       numberOfColumns: self.numberOfColumns,
                                       numberOfRows: self.numberOfRows,
+                                      isBeingDraggingOnItem: self.isBeingDraggingOnItem,
                                       didLongPressItem: self.didLongPressItem,
                                       didFinishDraggingOnItem: self.didFinishDraggingOnItem)
     }()
@@ -100,4 +100,20 @@ public final class BSZoomGridScrollViewController: BSZoomGridBaseViewController 
     }
 }
 
-#endif
+// MARK: - Public Methods
+///
+extension BSZoomGridScrollViewController {
+    /// Refresh and redraw array items in the grid
+    ///
+    /// - Parameters:
+    ///   - compositingOperation: The compositing operation of creating image.
+    ///   - alpha: The alpha should be used for image.
+    ///   - backgroundColor: The background color for the output image.
+    /// - Returns: An image with compositing operation applied.
+    ///
+    /// - Note: This method only works for CG-based image. For any non-CG-based image, `base` itself is returned.
+    
+    public func refresh(_ itemsToZoom: [Any]) -> Void {
+        self.zoomGridScrollView.refresh(itemsToZoom)
+    }
+}
