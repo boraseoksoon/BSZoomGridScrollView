@@ -10,7 +10,12 @@ BSZoomGridScrollView is a powerful, pure swift iOS UI framework that provides th
 Screenshots
 -----------
 
-![BSZoomGridScrollView Screenshot](https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2FBSZoomGridScrollView.png?alt=media&token=062257fc-2aeb-498f-aa33-b179f5e1656b)
+![Alt Text](https://media.giphy.com/media/jS7ZYuYXRtPk6lHp5F/giphy.gif)
+
+![BSZoomGridScrollView Screenshot](https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2Fs4.png?alt=media&token=111d96f0-317c-49f0-b115-fb1592ab6299)
+
+Youtube video URL Link for how it works: <br>
+[link0](https://youtu.be/QTB7GqZL-L8)
 
 At a Glance
 -----------
@@ -46,31 +51,17 @@ var body: some View {
 ## Features
 
 - [x] Designed for SwiftUI, SwiftUI 100% support.
-- [x] Grid ScrollView is there for you out of box.
-- [x] Tracking user touch area on the grid scrollview out of box.
+- [x] Complex grid ScrollView UI out of box.
+- [x] Tracking user touch area on the grid scrollview and zoom it out of box.
 - [x] Return selected image by long press, pan gesture out of box. 
 - [x] Grid UI configuration.
-
-![Alt Text](https://media.giphy.com/media/jS7ZYuYXRtPk6lHp5F/giphy.gif)
-
-<img src="https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2FBSZoomGridScrollView.png?alt=media&token=062257fc-2aeb-498f-aa33-b179f5e1656b" width=240>
-<br>
-
-<img src="https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2FBSZoomGridScrollView01.png?alt=media&token=87df0d09-2f66-4f95-85ec-acc1e55e5435" width=240>
-<br>
-
-<img src="https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2FBSZoomGridScrollView02.png?alt=media&token=2af6a309-dd1b-4aa5-a63e-10900011681f" width=240>
-<br>
-
-
-Youtube video URL Link for how it works: <br>
-[link0](https://youtu.be/QTB7GqZL-L8)
 
 <br>
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+It includes examples for UIKit as well as SwiftUI.
 
 ## Requirements
 
@@ -246,4 +237,13 @@ boraseoksoon@gmail.com
 ## License
 
 BSZoomGridScrollView is available under the MIT license. See the LICENSE file for more info.
+
+
+## Screenshots
+
+![BSZoomGridScrollView Screenshot](https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2FBSZoomGridScrollView.png?alt=media&token=062257fc-2aeb-498f-aa33-b179f5e1656b)
+
+![BSZoomGridScrollView Screenshot](https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2Fs5.png?alt=media&token=396b4703-17cf-4411-a137-10ff516b9aac)
+
+![BSZoomGridScrollView Screenshot](https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2FBSZoomGridScrollView02.png?alt=media&token=2af6a309-dd1b-4aa5-a63e-10900011681f)
 
