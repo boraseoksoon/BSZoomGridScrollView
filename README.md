@@ -239,7 +239,7 @@ boraseoksoon@gmail.com
 BSZoomGridScrollView is available under the MIT license. See the LICENSE file for more info.
 
 
-## Screenshots
+## More screenshots..
 
 ![BSZoomGridScrollView Screenshot](https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2FBSZoomGridScrollView.png?alt=media&token=062257fc-2aeb-498f-aa33-b179f5e1656b)
 

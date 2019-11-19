@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		013E80BFAD60C029254582F0B07A8BC0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
-		0C9F93A1F0D807D383B227BCC0A60DFC /* Enumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DB72B9AF2A28F6BAB835A4786A1079 /* Enumeration.swift */; };
-		11A5A074298765B91511708B288FC27D /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902DC5C96EF06912C1F24ADD08ADBCE6 /* Functions.swift */; };
-		3CB2CC812D9A91A917C893D984EFAFD3 /* BSZoomGridUIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09A9A07EA263BAC91159BCE0334DB5C /* BSZoomGridUIScrollView.swift */; };
-		476BA8E72383D7160023C5D3 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476BA8E62383D7160023C5D3 /* UIViewController+Extension.swift */; };
-		58D484539D774794BE133417F9F8CF99 /* BSZoomGridScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1538BDABCF3D20CE412C324394AB096B /* BSZoomGridScrollView.swift */; };
+		0B02F716EA8A3605165893F331EF3C6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
+		252DD1AED069FBA57210FD50295538B0 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E64A896CB1C107C69E328CB35D88A71 /* UIImage+Extension.swift */; };
+		4023E8FE2EE8F5F7F7AF1F2590CADFA4 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED65B569A491D22F51EF81B90F2E71E0 /* Functions.swift */; };
+		5103FA521039E5929EB1AFE600C0C57C /* Enumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DB72B9AF2A28F6BAB835A4786A1079 /* Enumeration.swift */; };
+		61C7AFABCD30F785001938D0D615F141 /* BSZoomGridScrollView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 988BAC99444E4C556682529D1C78A3B3 /* BSZoomGridScrollView-dummy.m */; };
 		79A5CE547A95A1B180730681C8632C34 /* Pods-BSZoomGridScrollView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B179F0D6DC42D65BDB3FFF85A335AC11 /* Pods-BSZoomGridScrollView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9FB7B7C8B2A2420633517CC05A2354A3 /* UIControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68ECE1C2F10121DB9188EDAE289BF7E /* UIControl+Extension.swift */; };
-		B7FFA274A20F8108ECB144D1A623FC12 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D8FEA427AF63D6850154CC0AE8FA2 /* UIImage+Extension.swift */; };
+		8177E7EA59E71D0D5B61EC81745FD7B6 /* BSZoomGridScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1538BDABCF3D20CE412C324394AB096B /* BSZoomGridScrollView.swift */; };
+		A6C4D577B685F45E4A8DFE9155786E19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		ACA696A645303243DBD722C27BDBE31B /* BSZoomGridScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A19F6BB2E64B24AABEE5C30352DCAF /* BSZoomGridScrollViewController.swift */; };
+		AF0CE980754C4D358477E6CD545E10FE /* UIControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E1CE078F625C63BBC2E8C727A386B2 /* UIControl+Extension.swift */; };
+		CD600C087F33961B7371FFCF7952F168 /* BSZoomGridScrollView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FDAE1AA6328ACDF3A4DECF2ABF2AE6A2 /* BSZoomGridScrollView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D07981EBA9221D494A00E3A2910F71B8 /* Pods-BSZoomGridScrollView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7450DC1E7A6D38D66FD8D12E85860BDF /* Pods-BSZoomGridScrollView_Example-dummy.m */; };
-		D85736DD53DE89F5C1F2BE6B24022544 /* BSZoomGridBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99570AB6515F166C7CBD729AD4B7BAAF /* BSZoomGridBaseViewController.swift */; };
-		D8ECE21AEF782E55360535F3B078AAE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		E37048567AC02F0E3D3321285DF10447 /* BSZoomGridScrollView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FDAE1AA6328ACDF3A4DECF2ABF2AE6A2 /* BSZoomGridScrollView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC1E2BAD15A4F05578024275CCECD5BA /* BSZoomGridScrollView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 988BAC99444E4C556682529D1C78A3B3 /* BSZoomGridScrollView-dummy.m */; };
+		F811E51D8768B95A6B5E699B3A0306C2 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03427C8F1355F59CC85D4960C1350FA /* UIViewController+Extension.swift */; };
 		F86BC0891A1B97503DDD4539DC653296 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		F994026ECCFB6A150AE417327C8751B6 /* BSZoomGridScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A19F6BB2E64B24AABEE5C30352DCAF /* BSZoomGridScrollViewController.swift */; };
+		F899D2C3DED526E918FEDFF94DFA3EAE /* BSZoomGridUIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB105F56895E9BDA7F6EA6C33091240 /* BSZoomGridUIScrollView.swift */; };
+		FE49DEB1ABF4ED2C5D5DD0D4FA3A7E00 /* BSZoomGridBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138CFB4C09EC62FC62D798A59DBC620C /* BSZoomGridBaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,49 +37,40 @@
 
 /* Begin PBXFileReference section */
 		06B3BF7F3C8E767231B866931433453D /* BSZoomGridScrollView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BSZoomGridScrollView.modulemap; sourceTree = "<group>"; };
+		0E64A896CB1C107C69E328CB35D88A71 /* UIImage+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		138CFB4C09EC62FC62D798A59DBC620C /* BSZoomGridBaseViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BSZoomGridBaseViewController.swift; sourceTree = "<group>"; };
 		1538BDABCF3D20CE412C324394AB096B /* BSZoomGridScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BSZoomGridScrollView.swift; path = BSZoomGridScrollView/Classes/BSZoomGridScrollView.swift; sourceTree = "<group>"; };
 		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		3B77173CEE734B0E121D09A44647F282 /* BSZoomGridScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BSZoomGridScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B77173CEE734B0E121D09A44647F282 /* BSZoomGridScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BSZoomGridScrollView.framework; path = BSZoomGridScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		43B558EDCDCDF94C68458E2E188B631D /* Pods-BSZoomGridScrollView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BSZoomGridScrollView_Example.release.xcconfig"; sourceTree = "<group>"; };
-		476BA8E62383D7160023C5D3 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		4D0D8FEA427AF63D6850154CC0AE8FA2 /* UIImage+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		558EEDF49F5C5C6ED3555D8D756CE53E /* BSZoomGridScrollView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BSZoomGridScrollView.xcconfig; sourceTree = "<group>"; };
-		5E4F620EF0C99389F27021559E1A124E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		664037E9BF5CE7A197D85972F069ADD4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		5E4F620EF0C99389F27021559E1A124E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		62E1CE078F625C63BBC2E8C727A386B2 /* UIControl+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIControl+Extension.swift"; sourceTree = "<group>"; };
+		664037E9BF5CE7A197D85972F069ADD4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		7450DC1E7A6D38D66FD8D12E85860BDF /* Pods-BSZoomGridScrollView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BSZoomGridScrollView_Example-dummy.m"; sourceTree = "<group>"; };
 		770D925D5B491E973620F9F4E6C49D51 /* Pods-BSZoomGridScrollView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BSZoomGridScrollView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		7DA7ED204C6154B5843A68B646890503 /* BSZoomGridScrollView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BSZoomGridScrollView-Info.plist"; sourceTree = "<group>"; };
 		81DB72B9AF2A28F6BAB835A4786A1079 /* Enumeration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Enumeration.swift; path = BSZoomGridScrollView/Classes/Enumeration.swift; sourceTree = "<group>"; };
 		828193FB209CC99B634C49B520590436 /* Pods-BSZoomGridScrollView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BSZoomGridScrollView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		84A19F6BB2E64B24AABEE5C30352DCAF /* BSZoomGridScrollViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BSZoomGridScrollViewController.swift; path = BSZoomGridScrollView/Classes/BSZoomGridScrollViewController.swift; sourceTree = "<group>"; };
-		902DC5C96EF06912C1F24ADD08ADBCE6 /* Functions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		8DB105F56895E9BDA7F6EA6C33091240 /* BSZoomGridUIScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BSZoomGridUIScrollView.swift; sourceTree = "<group>"; };
 		988BAC99444E4C556682529D1C78A3B3 /* BSZoomGridScrollView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BSZoomGridScrollView-dummy.m"; sourceTree = "<group>"; };
-		99570AB6515F166C7CBD729AD4B7BAAF /* BSZoomGridBaseViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BSZoomGridBaseViewController.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A10137FF2A8BBE3808A11105BD2E9A8C /* Pods-BSZoomGridScrollView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BSZoomGridScrollView_Example.modulemap"; sourceTree = "<group>"; };
 		A7C2508B57095682A97EA4DCC19D9A2C /* Pods-BSZoomGridScrollView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BSZoomGridScrollView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B179F0D6DC42D65BDB3FFF85A335AC11 /* Pods-BSZoomGridScrollView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BSZoomGridScrollView_Example-umbrella.h"; sourceTree = "<group>"; };
+		C03427C8F1355F59CC85D4960C1350FA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		C37A736E91C2E9981AB7051C41BB0147 /* BSZoomGridScrollView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BSZoomGridScrollView-prefix.pch"; sourceTree = "<group>"; };
-		C952E9F86EE9F44FDCBE4A487D28AEE0 /* Pods_BSZoomGridScrollView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BSZoomGridScrollView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C952E9F86EE9F44FDCBE4A487D28AEE0 /* Pods_BSZoomGridScrollView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BSZoomGridScrollView_Example.framework; path = "Pods-BSZoomGridScrollView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D8A2DA440CD8F5AD64FAD5D0BC62EE /* Pods-BSZoomGridScrollView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BSZoomGridScrollView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D68ECE1C2F10121DB9188EDAE289BF7E /* UIControl+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIControl+Extension.swift"; sourceTree = "<group>"; };
-		E09A9A07EA263BAC91159BCE0334DB5C /* BSZoomGridUIScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BSZoomGridUIScrollView.swift; sourceTree = "<group>"; };
 		E708665299E3446A03338A3F8823795E /* Pods-BSZoomGridScrollView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BSZoomGridScrollView_Example-Info.plist"; sourceTree = "<group>"; };
-		EFE55CA837731636B3D51CECD1EDCFEB /* BSZoomGridScrollView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = BSZoomGridScrollView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		ED65B569A491D22F51EF81B90F2E71E0 /* Functions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		EFE55CA837731636B3D51CECD1EDCFEB /* BSZoomGridScrollView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = BSZoomGridScrollView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FDAE1AA6328ACDF3A4DECF2ABF2AE6A2 /* BSZoomGridScrollView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BSZoomGridScrollView-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8262BB9F60765C007CC14ECC90EF975A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D8ECE21AEF782E55360535F3B078AAE4 /* Foundation.framework in Frameworks */,
-				013E80BFAD60C029254582F0B07A8BC0 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C5016CD20EE16AF6B154A9A316C6766E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,23 +79,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E43BB5509C1ACB0B896F65CFACA45796 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6C4D577B685F45E4A8DFE9155786E19 /* Foundation.framework in Frameworks */,
+				0B02F716EA8A3605165893F331EF3C6E /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02E088C04049E363E886719203516A01 /* Function */ = {
-			isa = PBXGroup;
-			children = (
-				902DC5C96EF06912C1F24ADD08ADBCE6 /* Functions.swift */,
-			);
-			path = Function;
-			sourceTree = "<group>";
-		};
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				E2983683FD097A93297E2F5D4E382B36 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		17C7225E521BA95428E57553A91B8B87 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				ED65B569A491D22F51EF81B90F2E71E0 /* Functions.swift */,
+			);
+			name = Function;
+			path = Function;
 			sourceTree = "<group>";
 		};
 		496BED6A2D6FCBEDD832A9AF64803A26 /* Targets Support Files */ = {
@@ -115,6 +116,16 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		5DC8AD5DBCB8254645D10848865C25F0 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				138CFB4C09EC62FC62D798A59DBC620C /* BSZoomGridBaseViewController.swift */,
+				8DB105F56895E9BDA7F6EA6C33091240 /* BSZoomGridUIScrollView.swift */,
+			);
+			name = UIKit;
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		6382A14B1747FC976251E4A576BA78A6 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +134,28 @@
 				5E4F620EF0C99389F27021559E1A124E /* README.md */,
 			);
 			name = Pod;
+			sourceTree = "<group>";
+		};
+		6443DA708FAB0D7D4B42F245EFD04A9D /* BSZoomGridScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				71B3F53D98C67D04F03E6CFD4CF7A50A /* Extension */,
+				17C7225E521BA95428E57553A91B8B87 /* Function */,
+				5DC8AD5DBCB8254645D10848865C25F0 /* UIKit */,
+			);
+			name = BSZoomGridScrollView;
+			path = BSZoomGridScrollView/Classes/BSZoomGridScrollView;
+			sourceTree = "<group>";
+		};
+		71B3F53D98C67D04F03E6CFD4CF7A50A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				62E1CE078F625C63BBC2E8C727A386B2 /* UIControl+Extension.swift */,
+				0E64A896CB1C107C69E328CB35D88A71 /* UIImage+Extension.swift */,
+				C03427C8F1355F59CC85D4960C1350FA /* UIViewController+Extension.swift */,
+			);
+			name = Extension;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		75BEAE45CC8530C7874A7D8DFA8E31CB /* Support Files */ = {
@@ -139,15 +172,6 @@
 			path = "Example/Pods/Target Support Files/BSZoomGridScrollView";
 			sourceTree = "<group>";
 		};
-		75F069DF2AC3CF4C53B7AEFDCBB50AE5 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				99570AB6515F166C7CBD729AD4B7BAAF /* BSZoomGridBaseViewController.swift */,
-				E09A9A07EA263BAC91159BCE0334DB5C /* BSZoomGridUIScrollView.swift */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
 		761140CC9C76AF6E1353CBC1217D7D1E /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,7 +186,7 @@
 				1538BDABCF3D20CE412C324394AB096B /* BSZoomGridScrollView.swift */,
 				84A19F6BB2E64B24AABEE5C30352DCAF /* BSZoomGridScrollViewController.swift */,
 				81DB72B9AF2A28F6BAB835A4786A1079 /* Enumeration.swift */,
-				B5616DE914BE57000D8CADC90982E667 /* BSZoomGridScrollView */,
+				6443DA708FAB0D7D4B42F245EFD04A9D /* BSZoomGridScrollView */,
 				6382A14B1747FC976251E4A576BA78A6 /* Pod */,
 				75BEAE45CC8530C7874A7D8DFA8E31CB /* Support Files */,
 			);
@@ -196,27 +220,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A161BEBFB746503B56DDB8AD6C0E6A35 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				D68ECE1C2F10121DB9188EDAE289BF7E /* UIControl+Extension.swift */,
-				4D0D8FEA427AF63D6850154CC0AE8FA2 /* UIImage+Extension.swift */,
-				476BA8E62383D7160023C5D3 /* UIViewController+Extension.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		B5616DE914BE57000D8CADC90982E667 /* BSZoomGridScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				A161BEBFB746503B56DDB8AD6C0E6A35 /* Extension */,
-				02E088C04049E363E886719203516A01 /* Function */,
-				75F069DF2AC3CF4C53B7AEFDCBB50AE5 /* UIKit */,
-			);
-			name = BSZoomGridScrollView;
-			path = BSZoomGridScrollView/Classes/BSZoomGridScrollView;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
@@ -248,11 +251,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5BA6D6A87247C53F5C90B11A58684D30 /* Headers */ = {
+		8BB59B9CC2CE54B4503EB563C76AC51C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E37048567AC02F0E3D3321285DF10447 /* BSZoomGridScrollView-umbrella.h in Headers */,
+				CD600C087F33961B7371FFCF7952F168 /* BSZoomGridScrollView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,12 +264,12 @@
 /* Begin PBXNativeTarget section */
 		432304BFBEE0DF21230A84BFD136EF1C /* BSZoomGridScrollView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D9364C562E942E06F0416476EEBF306 /* Build configuration list for PBXNativeTarget "BSZoomGridScrollView" */;
+			buildConfigurationList = 140B36CF25B5441A6F40F8B5B68C6884 /* Build configuration list for PBXNativeTarget "BSZoomGridScrollView" */;
 			buildPhases = (
-				5BA6D6A87247C53F5C90B11A58684D30 /* Headers */,
-				A18F31DDDA73BFE2E059B666550B8BA5 /* Sources */,
-				8262BB9F60765C007CC14ECC90EF975A /* Frameworks */,
-				142856B97A295A5EE81D682EC0B43B42 /* Resources */,
+				8BB59B9CC2CE54B4503EB563C76AC51C /* Headers */,
+				2D046B04F1477BC59D2A7E5CF63303A4 /* Sources */,
+				E43BB5509C1ACB0B896F65CFACA45796 /* Frameworks */,
+				B3D1277CA0BA2A7B56ABFFBFA3F6FD98 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -325,14 +328,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		142856B97A295A5EE81D682EC0B43B42 /* Resources */ = {
+		2D7A78F66F4160CEE4BE9D83538418E8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2D7A78F66F4160CEE4BE9D83538418E8 /* Resources */ = {
+		B3D1277CA0BA2A7B56ABFFBFA3F6FD98 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -342,28 +345,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2D046B04F1477BC59D2A7E5CF63303A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE49DEB1ABF4ED2C5D5DD0D4FA3A7E00 /* BSZoomGridBaseViewController.swift in Sources */,
+				61C7AFABCD30F785001938D0D615F141 /* BSZoomGridScrollView-dummy.m in Sources */,
+				8177E7EA59E71D0D5B61EC81745FD7B6 /* BSZoomGridScrollView.swift in Sources */,
+				ACA696A645303243DBD722C27BDBE31B /* BSZoomGridScrollViewController.swift in Sources */,
+				F899D2C3DED526E918FEDFF94DFA3EAE /* BSZoomGridUIScrollView.swift in Sources */,
+				5103FA521039E5929EB1AFE600C0C57C /* Enumeration.swift in Sources */,
+				4023E8FE2EE8F5F7F7AF1F2590CADFA4 /* Functions.swift in Sources */,
+				AF0CE980754C4D358477E6CD545E10FE /* UIControl+Extension.swift in Sources */,
+				252DD1AED069FBA57210FD50295538B0 /* UIImage+Extension.swift in Sources */,
+				F811E51D8768B95A6B5E699B3A0306C2 /* UIViewController+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4F390307927A5EA8611B0EFE6F216E81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D07981EBA9221D494A00E3A2910F71B8 /* Pods-BSZoomGridScrollView_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A18F31DDDA73BFE2E059B666550B8BA5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D85736DD53DE89F5C1F2BE6B24022544 /* BSZoomGridBaseViewController.swift in Sources */,
-				EC1E2BAD15A4F05578024275CCECD5BA /* BSZoomGridScrollView-dummy.m in Sources */,
-				58D484539D774794BE133417F9F8CF99 /* BSZoomGridScrollView.swift in Sources */,
-				F994026ECCFB6A150AE417327C8751B6 /* BSZoomGridScrollViewController.swift in Sources */,
-				3CB2CC812D9A91A917C893D984EFAFD3 /* BSZoomGridUIScrollView.swift in Sources */,
-				0C9F93A1F0D807D383B227BCC0A60DFC /* Enumeration.swift in Sources */,
-				11A5A074298765B91511708B288FC27D /* Functions.swift in Sources */,
-				9FB7B7C8B2A2420633517CC05A2354A3 /* UIControl+Extension.swift in Sources */,
-				476BA8E72383D7160023C5D3 /* UIViewController+Extension.swift in Sources */,
-				B7FFA274A20F8108ECB144D1A623FC12 /* UIImage+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,13 +470,14 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		2F994640D884AAC9E382029F2E2C5EF9 /* Release */ = {
+		2D5463596FE3EF62ABFB66DD5A2ED302 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 558EEDF49F5C5C6ED3555D8D756CE53E /* BSZoomGridScrollView.xcconfig */;
 			buildSettings = {
@@ -506,6 +510,39 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		C6834467F30F0C1794A0DB8B7CF802E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 558EEDF49F5C5C6ED3555D8D756CE53E /* BSZoomGridScrollView.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BSZoomGridScrollView/BSZoomGridScrollView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BSZoomGridScrollView/BSZoomGridScrollView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BSZoomGridScrollView/BSZoomGridScrollView.modulemap";
+				PRODUCT_MODULE_NAME = BSZoomGridScrollView;
+				PRODUCT_NAME = BSZoomGridScrollView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		ED7888FA6713EABBF66D26A8003AD1CA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -571,39 +608,6 @@
 			};
 			name = Debug;
 		};
-		EF709CB50BAAA96508008B9366D60180 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 558EEDF49F5C5C6ED3555D8D756CE53E /* BSZoomGridScrollView.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BSZoomGridScrollView/BSZoomGridScrollView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BSZoomGridScrollView/BSZoomGridScrollView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BSZoomGridScrollView/BSZoomGridScrollView.modulemap";
-				PRODUCT_MODULE_NAME = BSZoomGridScrollView;
-				PRODUCT_NAME = BSZoomGridScrollView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		F830D407336C003A553E1DA9C001BE28 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 43B558EDCDCDF94C68458E2E188B631D /* Pods-BSZoomGridScrollView_Example.release.xcconfig */;
@@ -652,11 +656,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D9364C562E942E06F0416476EEBF306 /* Build configuration list for PBXNativeTarget "BSZoomGridScrollView" */ = {
+		140B36CF25B5441A6F40F8B5B68C6884 /* Build configuration list for PBXNativeTarget "BSZoomGridScrollView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EF709CB50BAAA96508008B9366D60180 /* Debug */,
-				2F994640D884AAC9E382029F2E2C5EF9 /* Release */,
+				C6834467F30F0C1794A0DB8B7CF802E9 /* Debug */,
+				2D5463596FE3EF62ABFB66DD5A2ED302 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
