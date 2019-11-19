@@ -17,32 +17,34 @@ import BSZoomGridScrollView
 struct ContentView: View {
     @State var showSelectedImageView = false
     @State var selectedImage: UIImage?
-    
-    var imagesToZoom: [UIImage] = {
+
+    var itemsToZoom: [Any] = {
         var images = [UIImage]()
         for i in 0...29 {
             images.append(UIImage(named: "s\(i)") ?? UIImage())
         }
         return images
     }()
-
+    
     var body: some View {
         /// 😊 # Step2. That's it. completed!
-        BSZoomGridScrollView(imagesToZoom: imagesToZoom,
+        BSZoomGridScrollView(itemsToZoom: itemsToZoom,
                              powerOfZoomBounce: .regular,
-                             numberOfColumns: 200,
-                             numberOfRows: 10,
-                             scrollEnableButtonTintColor: .red,
-                             scrollEnableButtonBackgroundColor: .black, 
+                             scrollEnableButtonTintColor: .blue,
+                             scrollEnableButtonBackgroundColor: .black,
+                             isBeingDraggingOnItem:{ selectedImage in
+                                ///
+                             },
                              didLongPressItem: { selectedImage in
-                                print("on long press : ", selectedImage)
                                 /// Grab an image user end up choosing.
+                                print("on long press : ", selectedImage)
                                 self.selectedImage = selectedImage
                                 
                                 /// Present!
                                 self.showSelectedImageView.toggle()
                              },
                              didFinishDraggingOnItem: { selectedImage in
+                                /// Grab an image user end up choosing.
                                 print("on drag finish : ", selectedImage)
         })
         .edgesIgnoringSafeArea(.all)
