@@ -24,6 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#if os(iOS)
 import UIKit
 
 public class BSZoomGridBaseViewController: UIViewController {
@@ -42,8 +43,8 @@ public class BSZoomGridBaseViewController: UIViewController {
     /// - Returns: Initializer
     public init(itemsToZoom: [Any],
                 powerOfZoomBounce: ZoomBounceRatio,
-                numberOfColumns: Int,
-                numberOfRows: Int,
+                numberOfColumns: Int = 0,
+                numberOfRows: Int = 0,
                 scrollEnableButtonTintColor: UIColor = .black,
                 scrollEnableButtonBackgroundColor: UIColor = .white,
                 isBeingDraggingOnItem: ((_: UIImage) -> Void)?,
@@ -122,3 +123,4 @@ public class BSZoomGridBaseViewController: UIViewController {
         }
     }
 }
+#endif

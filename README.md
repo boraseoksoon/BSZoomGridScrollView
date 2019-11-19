@@ -22,22 +22,28 @@ At a Glance
 
 ```swift
 
-import BSZoomGridScrollView
-
 var body: some View {
-    /// 😎 That's all.
+    /// 😊 That's it.
     BSZoomGridScrollView(imagesToZoom: imagesToZoom,
                          powerOfZoomBounce: .regular,
                          numberOfColumns: 200,
                          numberOfRows: 10,
                          didLongPressItem: { selectedImage in
                             print("on long press : ", selectedImage)
+                            /// Grab an image user end up choosing.
+                            self.selectedImage = selectedImage
+                            
+                            /// Present!
+                            self.showSelectedImageView.toggle()
                          },
                          didFinishDraggingOnItem: { selectedImage in
                             print("on drag finish : ", selectedImage)
     })
     .edgesIgnoringSafeArea(.all)
-    
+    .sheet(isPresented:self.$showSelectedImageView) {
+        /// The example view showing a picked up image.
+        ShowingSelectedImageView(selectedImage: self.selectedImage)
+    }
 }
 ```
 
@@ -65,6 +71,7 @@ It includes examples for UIKit as well as SwiftUI.
 
 Getting Started
 --------------- 
+
 * SwiftUI
 
 ```Swift
@@ -74,25 +81,26 @@ import SwiftUI
 import BSZoomGridScrollView
 
 struct ContentView: View {
-    var imagesToZoom: [UIImage] = {
+    var itemsToZoom: [UIImage] = {
         var images = [UIImage]()
         for i in 0...29 {
-            images.append(UIImage(named: "s\(i)") ?? UIImage())
+            images.append(UIImage(named: "yourImage\(i)") ?? UIImage())
         }
         return images
     }()
-
+    
     var body: some View {
         /// 😊 # Step2. That's it. completed!
-        BSZoomGridScrollView(imagesToZoom: imagesToZoom,
+        BSZoomGridScrollView(itemsToZoom: itemsToZoom,
                              powerOfZoomBounce: .regular,
-                             numberOfColumns: 200,
-                             numberOfRows: 10,
+                             isBeingDraggingOnItem:{ selectedImage in
+                                ///
+                             },
                              didLongPressItem: { selectedImage in
-                                print("on long press : ", selectedImage)
+                                /// Grab an image user end up choosing.
                              },
                              didFinishDraggingOnItem: { selectedImage in
-                                print("on drag finish : ", selectedImage)
+                                /// Grab an image user end up choosing.
         })
         .edgesIgnoringSafeArea(.all)
     }
@@ -101,6 +109,11 @@ struct ContentView: View {
 
 * UIKit
 ```Swift
+///
+/// To use BSZoomGridScrollView,
+/// Please, Follow steps written in the comments with icon like 😀.
+///
+
 import SwiftUI
 import UIKit
 
@@ -120,15 +133,26 @@ class ViewController: UIViewController {
         /// To see how it works on SwiftUI,
         /// please refer to comments in SwiftUI directory -> ContentView.swift
         ///
-        return BSZoomGridScrollViewController(imagesToZoom: imagesToZoom,
-                                              powerOfZoomBounce: .crazy,
-                                              numberOfColumns: 70,
-                                              numberOfRows: 25,
-                                              didLongPressItem: { selectedImage in
-                                                print("on long press : ", selectedImage)
-                                                // Grab an image user end up choosing.
+        return BSZoomGridScrollViewController(itemsToZoom: self.itemsToZoom,
+                                              powerOfZoomBounce: .regular,
+                                              scrollEnableButtonTintColor: .black,
+                                              scrollEnableButtonBackgroundColor: .white,
+                                              isBeingDraggingOnItem:{ [unowned self] selectedImage in
+                                                 ///
                                               },
-                                              didFinishDraggingOnItem: { selectedImage in
+                                              didLongPressItem: { [unowned self] selectedImage in
+                                                print("on long press : ", selectedImage)
+                                                /// Grab an image user end up choosing.
+                                                
+                                                // Present the example view containing a selected image.
+                                                let v = ShowingSelectedImageView(selectedImage: selectedImage)
+                                                let vc = UIHostingController(rootView: v)
+                                                
+                                                self.presentedViewController?
+                                                    .present(vc, animated: true, completion: nil)
+                                                
+                                              },
+                                              didFinishDraggingOnItem: { [unowned self] selectedImage in
                                                 print("on drag finish : ", selectedImage)
                                               })
     }()
@@ -136,7 +160,7 @@ class ViewController: UIViewController {
     ///
     // prepare any item array to feed to BSZoomGridScrollViewController.
     ///
-    private var imagesToZoom: [UIImage] = {
+    private var itemsToZoom: [Any] = {
         var images = [UIImage]()
         for i in 0...29 {
             images.append(UIImage(named: "s\(i)") ?? UIImage())
@@ -210,10 +234,6 @@ let package = Package(
     // ...
 )
 ```
-
-## References
-Observable: TBD
-PhotoCell: TBD
 
 ## Author
 

@@ -30,13 +30,14 @@ class ViewController: UIViewController {
         /// To see how it works on SwiftUI,
         /// please refer to comments in SwiftUI directory -> ContentView.swift
         ///
-        return BSZoomGridScrollViewController(imagesToZoom: imagesToZoom,
-                                              powerOfZoomBounce: .crazy,
-                                              numberOfColumns: 70,
-                                              numberOfRows: 25,
-                                              scrollEnableButtonTintColor: .red,
-                                              scrollEnableButtonBackgroundColor: .black,
-                                              didLongPressItem: { selectedImage in
+        return BSZoomGridScrollViewController(itemsToZoom: self.itemsToZoom,
+                                              powerOfZoomBounce: .regular,
+                                              scrollEnableButtonTintColor: .black,
+                                              scrollEnableButtonBackgroundColor: .white,
+                                              isBeingDraggingOnItem:{ [unowned self] selectedImage in
+                                                 ///
+                                              },
+                                              didLongPressItem: { [unowned self] selectedImage in
                                                 print("on long press : ", selectedImage)
                                                 /// Grab an image user end up choosing.
                                                 
@@ -48,7 +49,7 @@ class ViewController: UIViewController {
                                                     .present(vc, animated: true, completion: nil)
                                                 
                                               },
-                                              didFinishDraggingOnItem: { selectedImage in
+                                              didFinishDraggingOnItem: { [unowned self] selectedImage in
                                                 print("on drag finish : ", selectedImage)
                                               })
     }()
@@ -56,7 +57,7 @@ class ViewController: UIViewController {
     ///
     // prepare any item array to feed to BSZoomGridScrollViewController.
     ///
-    private var imagesToZoom: [UIImage] = {
+    private var itemsToZoom: [Any] = {
         var images = [UIImage]()
         for i in 0...29 {
             images.append(UIImage(named: "s\(i)") ?? UIImage())
