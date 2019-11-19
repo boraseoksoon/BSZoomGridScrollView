@@ -24,6 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#if os(iOS)
 import UIKit
 
 public class BSZoomGridBaseViewController: UIViewController {
@@ -32,32 +33,29 @@ public class BSZoomGridBaseViewController: UIViewController {
     ///
     /// - Parameters:
     ///   - parentView: a parent view to add scrollView as subview
-    ///   - imagesToZoom: image array in grid to be displayed.
-    ///                   if image numbers are not enough to fill the grid, it will be repeated until grid is fully drawn.
+    ///   - itemsToZoom: item array in grid to be displayed such as [UIImage]
+    ///                   if item numbers are not enough to fill the grid, it will be repeated until grid is fully drawn.
     ///   - powerOfZoomBounce: a value to be able to choose from enum four enumeration types
     ///   - numberOfRows: number of row to be applied in a row.
     ///   - didLongPressItem: closure that will indicates which UIImage is decided to be chosen, by a long touch.
     ///   - didFinishDraggingOnItem: closure that will indicates
     ///                              which UIImage is decided to be chosen, by a end of pan gesture touch.
     /// - Returns: Initializer
-    public init(imagesToZoom: [UIImage],
+    public init(itemsToZoom: [Any],
                 powerOfZoomBounce: ZoomBounceRatio,
                 numberOfColumns: Int,
                 numberOfRows: Int,
                 scrollEnableButtonTintColor: UIColor = .black,
-                scrollEnableButtonBackgroundColor: UIColor = .white, 
+                scrollEnableButtonBackgroundColor: UIColor = .white,
+                isBeingDraggingOnItem: ((_: UIImage) -> Void)?,
                 didLongPressItem: ((_: UIImage) -> Void)?,
                 didFinishDraggingOnItem: ((_: UIImage) -> Void)?) {
-        
-        guard imagesToZoom.count > 0 else {
-            fatalError("At least, image array containing more than one image should be provided!")
-        }
-        
         /// Closures
         self.didLongPressItem = didLongPressItem
         self.didFinishDraggingOnItem = didFinishDraggingOnItem
+        self.isBeingDraggingOnItem = isBeingDraggingOnItem
         
-        self.imagesToZoom = imagesToZoom
+        self.itemsToZoom = itemsToZoom
         self.powerOfZoomBounce = powerOfZoomBounce
 
         super.init(nibName: nil, bundle: nil)
@@ -79,8 +77,9 @@ public class BSZoomGridBaseViewController: UIViewController {
     /// private accessor goes here.
     internal private(set) var didLongPressItem: ((_: UIImage) -> Void)?
     internal private(set) var didFinishDraggingOnItem: ((_: UIImage) -> Void)?
+    internal private(set) var isBeingDraggingOnItem: ((_: UIImage) -> Void)?
     
-    internal private(set) var imagesToZoom: [UIImage]
+    internal private(set) var itemsToZoom: [Any]
     
     internal private(set) var powerOfZoomBounce: ZoomBounceRatio
     
@@ -124,3 +123,4 @@ public class BSZoomGridBaseViewController: UIViewController {
         }
     }
 }
+#endif

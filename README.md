@@ -80,39 +80,28 @@ import SwiftUI
 import BSZoomGridScrollView
 
 struct ContentView: View {
-    /// @State var showSelectedImageView = false
-    /// @State var selectedImage: UIImage?
-    
-    var imagesToZoom: [UIImage] = {
+    var itemsToZoom: [UIImage] = {
         var images = [UIImage]()
         for i in 0...29 {
-            images.append(UIImage(named: "s\(i)") ?? UIImage())
+            images.append(UIImage(named: "yourImage\(i)") ?? UIImage())
         }
         return images
     }()
-
+    
     var body: some View {
         /// 😊 # Step2. That's it. completed!
-        BSZoomGridScrollView(imagesToZoom: imagesToZoom,
+        BSZoomGridScrollView(itemsToZoom: itemsToZoom,
                              powerOfZoomBounce: .regular,
-                             numberOfColumns: 200,
-                             numberOfRows: 10,
+                             isBeingDraggingOnItem:{ selectedImage in
+                                ///
+                             },
                              didLongPressItem: { selectedImage in
-                                print("on long press : ", selectedImage)
                                 /// Grab an image user end up choosing.
-                                /// self.selectedImage = selectedImage
-                                
-                                /// Present!
-                                /// self.showSelectedImageView.toggle()
                              },
                              didFinishDraggingOnItem: { selectedImage in
-                                print("on drag finish : ", selectedImage)
+                                /// Grab an image user end up choosing.
         })
         .edgesIgnoringSafeArea(.all)
-        /// .sheet(isPresented:self.$showSelectedImageView) {
-            /// The example view showing a picked up image.
-            /// ShowingSelectedImageView(selectedImage: self.selectedImage)
-        /// }
     }
 }
 ```
