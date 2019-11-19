@@ -33,22 +33,20 @@ import UIKit
 public struct BSZoomGridScrollView {
     // MARK: - Initializer
     ///
-    public init(imagesToZoom: [UIImage],
+    public init(itemsToZoom: [Any],
                 powerOfZoomBounce: ZoomBounceRatio,
-                numberOfColumns: Int,
-                numberOfRows: Int,
+                numberOfColumns: Int = 0,
+                numberOfRows: Int = 0,
                 scrollEnableButtonTintColor: UIColor = .black,
                 scrollEnableButtonBackgroundColor: UIColor = .white,
+                isBeingDraggingOnItem: ((_: UIImage) -> Void)?,
                 didLongPressItem: ((_: UIImage) -> Void)?,
                 didFinishDraggingOnItem: ((_: UIImage) -> Void)?) {
-        guard imagesToZoom.count > 0 else {
-            fatalError("At least, image array containing more than one image should be provided!")
-        }
-
         self.didLongPressItem = didLongPressItem
         self.didFinishDraggingOnItem = didFinishDraggingOnItem
+        self.isBeingDraggingOnItem = isBeingDraggingOnItem
         
-        self.imagesToZoom = imagesToZoom
+        self.itemsToZoom = itemsToZoom
         self.powerOfZoomBounce = powerOfZoomBounce
         self.scrollEnableButtonTintColor = scrollEnableButtonTintColor
         self.scrollEnableButtonBackgroundColor = scrollEnableButtonBackgroundColor
@@ -59,12 +57,13 @@ public struct BSZoomGridScrollView {
     
     // MARK: - Instance Variables
     ///
-    private let imagesToZoom: [UIImage]
+    private let itemsToZoom: [Any]
     private let powerOfZoomBounce: ZoomBounceRatio
     private let numberOfColumns: Int
     private let numberOfRows: Int
     private let scrollEnableButtonTintColor: UIColor
     private let scrollEnableButtonBackgroundColor: UIColor
+    private let isBeingDraggingOnItem: ((_: UIImage) -> Void)?
     private let didLongPressItem: ((_: UIImage) -> Void)?
     private let didFinishDraggingOnItem: ((_: UIImage) -> Void)?
 }
@@ -78,19 +77,20 @@ extension BSZoomGridScrollView: UIViewControllerRepresentable {
     }
 
     public func makeUIViewController(context: Context) -> BSZoomGridScrollViewController {
-        let scrollViewController = BSZoomGridScrollViewController(imagesToZoom: imagesToZoom,
+        let scrollViewController = BSZoomGridScrollViewController(itemsToZoom: itemsToZoom,
                                                                   powerOfZoomBounce: self.powerOfZoomBounce,
                                                                   numberOfColumns: self.numberOfColumns,
                                                                   numberOfRows: self.numberOfRows,
                                                                   scrollEnableButtonTintColor: self.scrollEnableButtonTintColor,
                                                                   scrollEnableButtonBackgroundColor: self.scrollEnableButtonBackgroundColor,
+                                                                  isBeingDraggingOnItem: self.isBeingDraggingOnItem,
                                                                   didLongPressItem:self.didLongPressItem,
                                                                   didFinishDraggingOnItem:self.didFinishDraggingOnItem)
         return scrollViewController
     }
 
     public func updateUIViewController(_ vc: BSZoomGridScrollViewController, context: Context) {
-        vc.refresh(self.imagesToZoom)
+        vc.refresh(self.itemsToZoom)
     }
 
     public class Coordinator: NSObject {

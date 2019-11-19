@@ -34,8 +34,8 @@ class BSZoomGridUIScrollView: UIScrollView {
     ///
     /// - Parameters:
     ///   - parentView: a parent view to add scrollView as subview
-    ///   - imagesToZoom: image array in grid to be displayed.
-    ///                   if image numbers are not enough to fill the grid, it will be repeated until grid is fully drawn.
+    ///   - imagesToZoom: item array in grid to be displayed such as [UIImage]
+    ///                   if item numbers are not enough to fill the grid, it will be repeated until grid is fully drawn.
     ///   - powerOfZoomBounce: a value to be able to choose from enum four enumeration types
     ///   - numberOfRows: number of row to be applied in a row.
     ///   - didLongPressItem: closure that will indicates which UIImage is decided to be chosen, by a long touch.

@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     }()
     
     ///
-    // prepare any image array to feed to BSZoomGridScrollViewController.
+    // prepare any item array to feed to BSZoomGridScrollViewController.
     ///
     private var imagesToZoom: [UIImage] = {
         var images = [UIImage]()

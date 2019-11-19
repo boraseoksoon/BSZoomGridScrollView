@@ -22,28 +22,22 @@ At a Glance
 
 ```swift
 
+import BSZoomGridScrollView
+
 var body: some View {
-    /// 😊 That's it.
+    /// 😎 That's all.
     BSZoomGridScrollView(imagesToZoom: imagesToZoom,
                          powerOfZoomBounce: .regular,
                          numberOfColumns: 200,
                          numberOfRows: 10,
                          didLongPressItem: { selectedImage in
                             print("on long press : ", selectedImage)
-                            /// Grab an image user end up choosing.
-                            self.selectedImage = selectedImage
-                            
-                            /// Present!
-                            self.showSelectedImageView.toggle()
                          },
                          didFinishDraggingOnItem: { selectedImage in
                             print("on drag finish : ", selectedImage)
     })
     .edgesIgnoringSafeArea(.all)
-    .sheet(isPresented:self.$showSelectedImageView) {
-        /// The example view showing a picked up image.
-        ShowingSelectedImageView(selectedImage: self.selectedImage)
-    }
+    
 }
 ```
 
@@ -80,9 +74,6 @@ import SwiftUI
 import BSZoomGridScrollView
 
 struct ContentView: View {
-    /// @State var showSelectedImageView = false
-    /// @State var selectedImage: UIImage?
-    
     var imagesToZoom: [UIImage] = {
         var images = [UIImage]()
         for i in 0...29 {
@@ -99,20 +90,11 @@ struct ContentView: View {
                              numberOfRows: 10,
                              didLongPressItem: { selectedImage in
                                 print("on long press : ", selectedImage)
-                                /// Grab an image user end up choosing.
-                                /// self.selectedImage = selectedImage
-                                
-                                /// Present!
-                                /// self.showSelectedImageView.toggle()
                              },
                              didFinishDraggingOnItem: { selectedImage in
                                 print("on drag finish : ", selectedImage)
         })
         .edgesIgnoringSafeArea(.all)
-        /// .sheet(isPresented:self.$showSelectedImageView) {
-            /// The example view showing a picked up image.
-            /// ShowingSelectedImageView(selectedImage: self.selectedImage)
-        /// }
     }
 }
 ```
@@ -144,7 +126,7 @@ class ViewController: UIViewController {
                                               numberOfRows: 25,
                                               didLongPressItem: { selectedImage in
                                                 print("on long press : ", selectedImage)
-                                                /// Grab an image user end up choosing.
+                                                // Grab an image user end up choosing.
                                               },
                                               didFinishDraggingOnItem: { selectedImage in
                                                 print("on drag finish : ", selectedImage)
@@ -152,7 +134,7 @@ class ViewController: UIViewController {
     }()
     
     ///
-    // prepare any image array to feed to BSZoomGridScrollViewController.
+    // prepare any item array to feed to BSZoomGridScrollViewController.
     ///
     private var imagesToZoom: [UIImage] = {
         var images = [UIImage]()
@@ -228,6 +210,10 @@ let package = Package(
     // ...
 )
 ```
+
+## References
+Observable: TBD
+PhotoCell: TBD
 
 ## Author
 

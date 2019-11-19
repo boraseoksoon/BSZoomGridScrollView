@@ -41,7 +41,7 @@ public struct BSZoomGridScrollView {
                 didLongPressItem: ((_: UIImage) -> Void)?,
                 didFinishDraggingOnItem: ((_: UIImage) -> Void)?) {
         guard imagesToZoom.count > 0 else {
-            fatalError("At least, image array containing more than one image should be provided!")
+            fatalError("At least, item array containing more than one image should be provided!")
         }
 
         self.didLongPressItem = didLongPressItem

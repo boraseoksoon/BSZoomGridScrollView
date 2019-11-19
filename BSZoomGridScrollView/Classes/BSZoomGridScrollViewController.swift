@@ -69,8 +69,6 @@ public final class BSZoomGridScrollViewController: BSZoomGridBaseViewController 
                     ? "Scroll enabled. \(RandomEmoji())" : "Scroll locked. \(RandomEmoji())",
                 font: .boldSystemFont(ofSize: 16)
             )
-            
-            
         }
         
         return b
@@ -80,10 +78,11 @@ public final class BSZoomGridScrollViewController: BSZoomGridBaseViewController 
     /// 😊 #Step3: Init BSZoomGridUIScrollView, ready to use!
     private lazy var zoomGridScrollView: BSZoomGridUIScrollView = { [unowned self] in
         return BSZoomGridUIScrollView(parentView: self.view,
-                                      imagesToZoom: self.imagesToZoom,
+                                      itemsToZoom: self.itemsToZoom,
                                       powerOfZoomBounce: self.powerOfZoomBounce,
                                       numberOfColumns: self.numberOfColumns,
                                       numberOfRows: self.numberOfRows,
+                                      isBeingDraggingOnItem: self.isBeingDraggingOnItem,
                                       didLongPressItem: self.didLongPressItem,
                                       didFinishDraggingOnItem: self.didFinishDraggingOnItem)
     }()
@@ -114,7 +113,7 @@ extension BSZoomGridScrollViewController {
     ///
     /// - Note: This method only works for CG-based image. For any non-CG-based image, `base` itself is returned.
     
-    public func refresh(_ imagesToZoom: [UIImage]) -> Void {
-        self.zoomGridScrollView.refresh(imagesToZoom)
+    public func refresh(_ itemsToZoom: [Any]) -> Void {
+        self.zoomGridScrollView.refresh(itemsToZoom)
     }
 }
