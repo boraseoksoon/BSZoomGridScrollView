@@ -24,7 +24,6 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#if os(iOS)
 import UIKit
 
 class BSZoomGridUIScrollView: UIScrollView {
@@ -34,8 +33,8 @@ class BSZoomGridUIScrollView: UIScrollView {
     ///
     /// - Parameters:
     ///   - parentView: a parent view to add scrollView as subview
-    ///   - imagesToZoom: image array in grid to be displayed.
-    ///                   if image numbers are not enough to fill the grid, it will be repeated until grid is fully drawn.
+    ///   - itemsToZoom: item array in grid to be displayed such as [UIImage]
+    ///                   if item numbers are not enough to fill the grid, it will be repeated until grid is fully drawn.
     ///   - powerOfZoomBounce: a value to be able to choose from enum four enumeration types
     ///   - numberOfRows: number of row to be applied in a row.
     ///   - didLongPressItem: closure that will indicates which UIImage is decided to be chosen, by a long touch.
@@ -43,29 +42,36 @@ class BSZoomGridUIScrollView: UIScrollView {
     ///                              which UIImage is decided to be chosen, by a end of pan gesture touch.
     /// - Returns: Initializer
     required init(parentView: UIView,
-                  imagesToZoom: [UIImage],
+                  itemsToZoom: [Any],
                   powerOfZoomBounce: ZoomBounceRatio = .strong,
-                  numberOfColumns: Int = 70,
-                  numberOfRows: Int = 30,
+                  numberOfColumns: Int = 0,
+                  numberOfRows: Int = 0,
+                  isBeingDraggingOnItem: ((_: UIImage) -> Void)?,
                   didLongPressItem: ((_: UIImage) -> Void)?,
                   didFinishDraggingOnItem: ((_: UIImage) -> Void)?) {
-        if imagesToZoom.count <= 0 {
-            fatalError("""
-                        At least, image array containing more than one image
-                        should be provided!
-                        """)
-        }
         /// Closures
         self.didLongPressItem = didLongPressItem
         self.didFinishDraggingOnItem = didFinishDraggingOnItem
+        self.isBeingDraggingOnItem = isBeingDraggingOnItem
         
         /// Variables
         self.parentView = parentView
-        self.imagesToZoom = imagesToZoom
+        self.itemsToZoom = itemsToZoom
         
         self.powerOfZoomBounce = powerOfZoomBounce
         
         super.init(frame: parentView.frame)
+        
+        switch (numberOfColumns, numberOfRows) {
+            case (0, 0):
+                shouldRepeatToFillGrid = false
+            case (_, 0):
+                shouldRepeatToFillGrid = true
+            case (0, _):
+                shouldRepeatToFillGrid = true
+            default:
+                shouldRepeatToFillGrid = true
+        }
         
         self.numberOfColumns = numberOfColumns
         self.numberOfRows = numberOfRows
@@ -76,7 +82,7 @@ class BSZoomGridUIScrollView: UIScrollView {
         contentInsetAdjustmentBehavior = .never
         showsVerticalScrollIndicator = true
         showsHorizontalScrollIndicator = true
-        alwaysBounceHorizontal = false
+        alwaysBounceHorizontal = true
         alwaysBounceVertical = true
         
         maximumZoomScale = .infinity
@@ -87,7 +93,7 @@ class BSZoomGridUIScrollView: UIScrollView {
         
         autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        contentSize = CGSize(width:parentView.frame.size.width,
+        contentSize = CGSize(width:scrollViewContentWidth,
                              height:scrollViewContentHeight);
     }
     
@@ -103,9 +109,14 @@ class BSZoomGridUIScrollView: UIScrollView {
     /// private accessor goes here.
     private var didLongPressItem: ((_: UIImage) -> Void)?
     private var didFinishDraggingOnItem: ((_: UIImage) -> Void)?
+    private var isBeingDraggingOnItem: ((_: UIImage) -> Void)?
     
     private var scrollViewContentHeight: CGFloat {
-        self.absoluteWidth * self._numberOfColumns
+        self.absoluteWidth * CGFloat(self.numberOfColumns)
+    }
+    
+    private var scrollViewContentWidth: CGFloat {
+        self.absoluteWidth * CGFloat(self.numberOfRows)
     }
     
     private var absoluteWidth: CGFloat {
@@ -115,38 +126,62 @@ class BSZoomGridUIScrollView: UIScrollView {
     private var parentView: UIView!
     private(set) var powerOfZoomBounce: ZoomBounceRatio
     
-    private var imagesToZoom: [UIImage]
+    private var itemsToZoom: [Any]
 
-    private var _numberOfColumns: CGFloat = 70.0
+    private var _numberOfColumns: CGFloat = 0.0
     private(set) var numberOfColumns: Int {
         get {
-            return Int(_numberOfColumns)
+            if _numberOfColumns == 0 {
+                let autoCorrectionColumns =
+                    ceil(CGFloat(itemsToZoom.count)
+                    /
+                    CGFloat(BSZoomGridUIScrollView.FIX_ROWS))
+                return Int(autoCorrectionColumns)
+            } else {
+                return Int(_numberOfColumns)
+            }
         }
         set {
-            _numberOfColumns = CGFloat(newValue)
+            if newValue == 0 {
+                _numberOfColumns =
+                    ceil(CGFloat(itemsToZoom.count)
+                    /
+                    CGFloat(BSZoomGridUIScrollView.FIX_ROWS))
+            } else {
+                _numberOfColumns = CGFloat(newValue)
+            }
         }
     }
     
-    private var _numberOfRows: CGFloat = 30.0
+    private var _numberOfRows: CGFloat = 0.0
     private(set) var numberOfRows: Int {
         get {
-            return Int(_numberOfRows)
+            if _numberOfRows == 0 {
+                let autoCorrectionColumns = CGFloat(BSZoomGridUIScrollView.FIX_ROWS)
+                return Int(autoCorrectionColumns)
+            } else {
+                return Int(_numberOfRows)
+            }
         }
         set {
-            _numberOfRows = CGFloat(newValue)
+            if newValue == 0 {
+                _numberOfRows = CGFloat(BSZoomGridUIScrollView.FIX_ROWS)
+            } else {
+                _numberOfRows = CGFloat(newValue)
+            }
         }
     }
     
     private var zoomBounceRatio: CGFloat {
         switch self.powerOfZoomBounce {
             case .weak:
-                return 5.0 / (self.zoomScale * 1.0)
+                return 6.0 / (self.zoomScale * 1.0)
             case .regular:
-                return 6.0 / (self.zoomScale * 0.9)
+                return 8.0 / (self.zoomScale * 0.9)
             case .strong:
-                return 8.0 / (self.zoomScale * 0.85)
+                return 12.0 / (self.zoomScale * 0.85)
             case .crazy:
-                return 10.0 / (self.zoomScale * 0.6)
+                return 14.0 / (self.zoomScale * 0.6)
         }
     }
     
@@ -162,46 +197,22 @@ class BSZoomGridUIScrollView: UIScrollView {
     }()
     
     private lazy var gridBackgroundView: UIView = { [unowned self] in
-        let gridBackgroundView = UIView(frame: CGRect(x:0,
-                                                      y:0,
-                                                      width:Int(UIScreen.main.bounds.size.width),
-                                                      height:Int(scrollViewContentHeight)))
-        gridBackgroundView.backgroundColor = .black
-        
-        var imageIndex = 0
-        for j in 0...numberOfColumns {
-            for i in 0...numberOfRows {
-                imageIndex+=1
-                let cellView = UIImageView()
-                cellView.backgroundColor = .black
-                cellView.frame = CGRect(x: CGFloat(i) * absoluteWidth,
-                                        y: CGFloat(j) * absoluteWidth,
-                                        width: absoluteWidth,
-                                        height: absoluteWidth)
-                cellView.layer.borderWidth = 0.2
-                cellView.layer.borderColor = UIColor.black.cgColor
-
-                if imagesToZoom.count - 1 < imageIndex { imageIndex = 0 }
-                
-                let image = imagesToZoom[imageIndex]
-                cellView.image = image
-                gridBackgroundView.addSubview(cellView)
-                
-                let key = "\(i)|\(j)"
-                cells[key] = cellView
-            }
-        }
-        
-        gridBackgroundView.addGestureRecognizer(longGesture)
-        gridBackgroundView.addGestureRecognizer(panGesture)
-                
+        let gridBackgroundView = self.createGridBackgroundView(
+            itemsToZoom: itemsToZoom,
+            numberOfGrid: (numberOfColumns, numberOfRows)
+        )
         return gridBackgroundView
     }()
+    
+    private var shouldRepeatToFillGrid = false
     
     // MARK: - Constants
     /// Private Constants
     static let SCROLL_CHECK_DELAY: Double = 0.25
     static let ICON_WIDTH: CGFloat = 77.0
+    
+    /// When rows and columns are given 0, use it for row value.
+    static let FIX_ROWS: Int = 20
 }
 
 // MARK: - Target, Action
@@ -222,11 +233,94 @@ extension BSZoomGridUIScrollView {
 
 // MARK: - Public instance methods
 ///
+extension BSZoomGridUIScrollView {
+    public func refresh(_ itemsToZoom: [Any]) -> Void {
+        // not to refresh all the time
+        guard self.itemsToZoom.count != itemsToZoom.count else { return }
+        
+        self.itemsToZoom = itemsToZoom
+        
+        self.clear()
+        
+        self.gridBackgroundView = self.createGridBackgroundView(
+            itemsToZoom: itemsToZoom,
+            numberOfGrid: (numberOfColumns, numberOfRows)
+        )
+        
+        addSubview(self.gridBackgroundView)
+    }
+}
 
 // MARK: - Private instance methods
 ///
 extension BSZoomGridUIScrollView {
-    private func animate(tracking gesture: UIGestureRecognizer, completion: @escaping (_: UIImage) -> Void) {
+    private func clear() -> Void {
+        self.gridBackgroundView.removeFromSuperview()
+
+        cells = [:]
+        selectedCell = nil
+    }
+
+    private func createGridBackgroundView(itemsToZoom: [Any],
+                                          numberOfGrid: (Int, Int)) -> UIView {
+        let numberOfColumns = numberOfGrid.0
+        let numberOfRows = numberOfGrid.1
+        
+        let gridBackgroundView = UIView(frame: CGRect(x:0,
+                                                      y:0,
+                                                      width:Int(UIScreen.main.bounds.size.width),
+                                                      height:Int(scrollViewContentHeight)))
+        gridBackgroundView.backgroundColor = .black
+        
+        if itemsToZoom.count > 0 {
+            ///
+            /// if numberOfColumns and numberOfRows are given in the constructor,
+            /// repeat the provided array to fill the grid UI up to number of
+            /// numberOfRows * numberOfRows.
+            /// Otherwise, just fill the grid exactly up to number of counts of arrays.
+            ///
+            var imageIndex = 0
+            for j in 0..<numberOfColumns {
+                for i in 0..<numberOfRows {
+                    imageIndex+=1
+                    
+                    let cellView = UIImageView()
+                    cellView.backgroundColor = .black
+                    cellView.frame = CGRect(x: CGFloat(i) * absoluteWidth,
+                                            y: CGFloat(j) * absoluteWidth,
+                                            width: absoluteWidth,
+                                            height: absoluteWidth)
+                    cellView.layer.borderWidth = 0.2
+                    cellView.layer.borderColor = UIColor.black.cgColor
+                    
+                    if shouldRepeatToFillGrid {
+                        if itemsToZoom.count - 1 < imageIndex { imageIndex = 0 }
+                    } else {
+                        guard itemsToZoom.count - 1 >= imageIndex
+                            else {
+                                break
+                        }
+                    }
+                    
+                    if let image = itemsToZoom[imageIndex] as? UIImage {
+                        cellView.image = image
+                        gridBackgroundView.addSubview(cellView)
+                        
+                        let key = "\(i)|\(j)"
+                        cells[key] = cellView
+                    }
+                }
+            }
+        }
+        
+        gridBackgroundView.addGestureRecognizer(longGesture)
+        gridBackgroundView.addGestureRecognizer(panGesture)
+        
+        return gridBackgroundView
+    }
+    
+    private func animate(tracking gesture: UIGestureRecognizer,
+                         completion: @escaping (_: UIImage) -> Void) {
         let location = gesture.location(in: gridBackgroundView)
         let width = gridBackgroundView.frame.width / CGFloat(numberOfRows)
         
@@ -258,6 +352,10 @@ extension BSZoomGridUIScrollView {
                        initialSpringVelocity: 1,
                        options: .curveEaseOut,
                        animations: {
+                        if let image = cellView.image {
+                            self.isBeingDraggingOnItem?(image)
+                        }
+
                         cellView.layer.transform = CATransform3DMakeScale(self.zoomBounceRatio,
                                                                           self.zoomBounceRatio,
                                                                           self.zoomBounceRatio)
@@ -364,5 +462,3 @@ extension BSZoomGridUIScrollView: UIGestureRecognizerDelegate {
         return true
     }
 }
-
-#endif

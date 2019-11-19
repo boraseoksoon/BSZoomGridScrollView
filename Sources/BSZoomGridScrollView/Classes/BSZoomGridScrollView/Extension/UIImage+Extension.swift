@@ -6,7 +6,6 @@
 //  Copyright © 2019 Seoksoon Jang. All rights reserved.
 //
 
-#if os(iOS)
 import UIKit
 
 extension UIImage {
@@ -16,4 +15,3 @@ extension UIImage {
         }
     }
 }
-#endif

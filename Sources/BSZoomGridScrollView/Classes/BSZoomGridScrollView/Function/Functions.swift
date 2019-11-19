@@ -55,7 +55,6 @@ func Delay(_ delaySeconds: Double, completion: @escaping () -> Void) -> Void {
 }
 
 
-#if os(iOS)
 import UIKit
 // MARK: - Utility
 ///
@@ -77,4 +76,3 @@ func RandomEmoji() -> String {
     return String(scalar)
 }
 
-#endif
