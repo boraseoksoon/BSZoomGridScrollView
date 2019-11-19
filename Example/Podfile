@@ -1,0 +1,6 @@
+use_frameworks!
+
+target 'BSZoomGridScrollView_Example' do
+  pod 'BSZoomGridScrollView', :path => '../'
+  
+end

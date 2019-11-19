@@ -1,0 +1,6 @@
+framework module BSZoomGridScrollView {
+  umbrella header "BSZoomGridScrollView-umbrella.h"
+
+  export *
+  module * { export * }
+}

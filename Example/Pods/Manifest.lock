@@ -1,0 +1,16 @@
+PODS:
+  - BSZoomGridScrollView (0.1.0)
+
+DEPENDENCIES:
+  - BSZoomGridScrollView (from `../`)
+
+EXTERNAL SOURCES:
+  BSZoomGridScrollView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BSZoomGridScrollView: 914e20fe091720d1565edce174fb3b812a8c7bcc
+
+PODFILE CHECKSUM: 041201820f6a291bd91378d47804e6579ddafbe0
+
+COCOAPODS: 1.8.4
