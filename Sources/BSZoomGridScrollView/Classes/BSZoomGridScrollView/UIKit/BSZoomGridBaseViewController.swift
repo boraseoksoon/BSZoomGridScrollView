@@ -24,6 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#if os(iOS)
 import UIKit
 
 public class BSZoomGridBaseViewController: UIViewController {
@@ -122,3 +123,4 @@ public class BSZoomGridBaseViewController: UIViewController {
         }
     }
 }
+#endif
