@@ -50,11 +50,11 @@ var body: some View {
 
 ## Features
 
-- [x] Designed for SwiftUI, SwiftUI 100% support.
-- [x] Complex grid ScrollView UI out of box.
-- [x] Tracking user touch area on the grid scrollview and zoom it out of box.
-- [x] Return selected image by long press, pan gesture out of box. 
-- [x] Grid UI configuration.
+- [x] Designed for SwiftUI, SwiftUI 100% is supported.
+- [x] Complex grid ScrollView UI is provided out of box.
+- [x] Tracking user touch area on the grid scrollview, Zooming items is done out of box.
+- [x] BSZoomGridScrollView will return an image selected by a user, detected by the internal long press and pan gesture inside out of box. 
+- [x] Grid UI can be styled for number of columns, rows, zoom effect and images you would like to input to show in the grid.
 
 <br>
 
