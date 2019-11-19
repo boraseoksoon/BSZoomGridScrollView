@@ -44,6 +44,8 @@ public class BSZoomGridBaseViewController: UIViewController {
                 powerOfZoomBounce: ZoomBounceRatio,
                 numberOfColumns: Int,
                 numberOfRows: Int,
+                scrollEnableButtonTintColor: UIColor = .black,
+                scrollEnableButtonBackgroundColor: UIColor = .white, 
                 didLongPressItem: ((_: UIImage) -> Void)?,
                 didFinishDraggingOnItem: ((_: UIImage) -> Void)?) {
         
@@ -57,11 +59,13 @@ public class BSZoomGridBaseViewController: UIViewController {
         
         self.imagesToZoom = imagesToZoom
         self.powerOfZoomBounce = powerOfZoomBounce
-        
+
         super.init(nibName: nil, bundle: nil)
-        
+
         self.numberOfColumns = numberOfColumns
         self.numberOfRows = numberOfRows
+        self.scrollEnableButtonTintColor = scrollEnableButtonTintColor
+        self.scrollEnableButtonBackgroundColor = scrollEnableButtonBackgroundColor
     }
     
     required public init?(coder: NSCoder) {
@@ -80,6 +84,26 @@ public class BSZoomGridBaseViewController: UIViewController {
     
     internal private(set) var powerOfZoomBounce: ZoomBounceRatio
     
+    private var _scrollEnableButtonBackgroundColor: UIColor = .black
+    internal var scrollEnableButtonBackgroundColor: UIColor {
+        get {
+            return _scrollEnableButtonBackgroundColor
+        }
+        set {
+            _scrollEnableButtonBackgroundColor = newValue
+        }
+    }
+    
+    private var _scrollEnableButtonTintColor: UIColor = .black
+    internal var scrollEnableButtonTintColor: UIColor {
+        get {
+            return _scrollEnableButtonTintColor
+        }
+        set {
+            _scrollEnableButtonTintColor = newValue
+        }
+    }
+
     private var _numberOfColumns: CGFloat = 70.0
     internal private(set) var numberOfColumns: Int {
         get {

@@ -21,10 +21,9 @@ At a Glance
 -----------
 
 ```swift
-import BSZoomGridScrollView
 
 var body: some View {
-    /// 😊 # Step2. That's it. completed!
+    /// 😊 That's it.
     BSZoomGridScrollView(imagesToZoom: imagesToZoom,
                          powerOfZoomBounce: .regular,
                          numberOfColumns: 200,
@@ -81,8 +80,8 @@ import SwiftUI
 import BSZoomGridScrollView
 
 struct ContentView: View {
-    @State var showSelectedImageView = false
-    @State var selectedImage: UIImage?
+    /// @State var showSelectedImageView = false
+    /// @State var selectedImage: UIImage?
     
     var imagesToZoom: [UIImage] = {
         var images = [UIImage]()
@@ -101,19 +100,19 @@ struct ContentView: View {
                              didLongPressItem: { selectedImage in
                                 print("on long press : ", selectedImage)
                                 /// Grab an image user end up choosing.
-                                self.selectedImage = selectedImage
+                                /// self.selectedImage = selectedImage
                                 
                                 /// Present!
-                                self.showSelectedImageView.toggle()
+                                /// self.showSelectedImageView.toggle()
                              },
                              didFinishDraggingOnItem: { selectedImage in
                                 print("on drag finish : ", selectedImage)
         })
         .edgesIgnoringSafeArea(.all)
-        .sheet(isPresented:self.$showSelectedImageView) {
+        /// .sheet(isPresented:self.$showSelectedImageView) {
             /// The example view showing a picked up image.
-            ShowingSelectedImageView(selectedImage: self.selectedImage)
-        }
+            /// ShowingSelectedImageView(selectedImage: self.selectedImage)
+        /// }
     }
 }
 ```

@@ -34,6 +34,8 @@ class ViewController: UIViewController {
                                               powerOfZoomBounce: .crazy,
                                               numberOfColumns: 70,
                                               numberOfRows: 25,
+                                              scrollEnableButtonTintColor: .red,
+                                              scrollEnableButtonBackgroundColor: .black,
                                               didLongPressItem: { selectedImage in
                                                 print("on long press : ", selectedImage)
                                                 /// Grab an image user end up choosing.

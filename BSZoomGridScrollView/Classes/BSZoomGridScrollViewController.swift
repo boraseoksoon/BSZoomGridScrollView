@@ -48,15 +48,16 @@ public final class BSZoomGridScrollViewController: BSZoomGridBaseViewController 
                               y: UIScreen.main.bounds.height - (UIScreen.main.bounds.height * 0.25),
                               width: BSZoomGridUIScrollView.ICON_WIDTH,
                               height: BSZoomGridUIScrollView.ICON_WIDTH)
-        
-        b.backgroundColor = .white
+                
         b.setBackgroundImage(UIImage(systemName: "circle"),
                                   for: .normal)
         
         b.setBackgroundImage(UIImage(systemName: "circle.fill"),
                              for: .highlighted)
         
-        b.tintColor = .black
+        b.tintColor = self.scrollEnableButtonTintColor
+        b.backgroundColor = self.scrollEnableButtonBackgroundColor
+        
         b.layer.cornerRadius = b.frame.size.width / 2.0
         b.clipsToBounds = true
          
@@ -97,5 +98,23 @@ public final class BSZoomGridScrollViewController: BSZoomGridBaseViewController 
         /// Add all views created so far.
         self.view.addSubview(self.zoomGridScrollView)
         self.view.addSubview(self.disableOrNotButton)
+    }
+}
+
+// MARK: - Public Methods
+///
+extension BSZoomGridScrollViewController {
+    /// Refresh and redraw array items in the grid
+    ///
+    /// - Parameters:
+    ///   - compositingOperation: The compositing operation of creating image.
+    ///   - alpha: The alpha should be used for image.
+    ///   - backgroundColor: The background color for the output image.
+    /// - Returns: An image with compositing operation applied.
+    ///
+    /// - Note: This method only works for CG-based image. For any non-CG-based image, `base` itself is returned.
+    
+    public func refresh(_ imagesToZoom: [UIImage]) -> Void {
+        self.zoomGridScrollView.refresh(imagesToZoom)
     }
 }

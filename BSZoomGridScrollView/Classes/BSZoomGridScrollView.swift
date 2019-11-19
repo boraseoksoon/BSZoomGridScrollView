@@ -37,6 +37,8 @@ public struct BSZoomGridScrollView {
                 powerOfZoomBounce: ZoomBounceRatio,
                 numberOfColumns: Int,
                 numberOfRows: Int,
+                scrollEnableButtonTintColor: UIColor = .black,
+                scrollEnableButtonBackgroundColor: UIColor = .white,
                 didLongPressItem: ((_: UIImage) -> Void)?,
                 didFinishDraggingOnItem: ((_: UIImage) -> Void)?) {
         guard imagesToZoom.count > 0 else {
@@ -48,7 +50,8 @@ public struct BSZoomGridScrollView {
         
         self.imagesToZoom = imagesToZoom
         self.powerOfZoomBounce = powerOfZoomBounce
-        
+        self.scrollEnableButtonTintColor = scrollEnableButtonTintColor
+        self.scrollEnableButtonBackgroundColor = scrollEnableButtonBackgroundColor
 
         self.numberOfColumns = numberOfColumns
         self.numberOfRows = numberOfRows
@@ -60,7 +63,8 @@ public struct BSZoomGridScrollView {
     private let powerOfZoomBounce: ZoomBounceRatio
     private let numberOfColumns: Int
     private let numberOfRows: Int
-
+    private let scrollEnableButtonTintColor: UIColor
+    private let scrollEnableButtonBackgroundColor: UIColor
     private let didLongPressItem: ((_: UIImage) -> Void)?
     private let didFinishDraggingOnItem: ((_: UIImage) -> Void)?
 }
@@ -78,13 +82,15 @@ extension BSZoomGridScrollView: UIViewControllerRepresentable {
                                                                   powerOfZoomBounce: self.powerOfZoomBounce,
                                                                   numberOfColumns: self.numberOfColumns,
                                                                   numberOfRows: self.numberOfRows,
+                                                                  scrollEnableButtonTintColor: self.scrollEnableButtonTintColor,
+                                                                  scrollEnableButtonBackgroundColor: self.scrollEnableButtonBackgroundColor,
                                                                   didLongPressItem:self.didLongPressItem,
                                                                   didFinishDraggingOnItem:self.didFinishDraggingOnItem)
         return scrollViewController
     }
 
     public func updateUIViewController(_ vc: BSZoomGridScrollViewController, context: Context) {
-        //
+        vc.refresh(self.imagesToZoom)
     }
 
     public class Coordinator: NSObject {

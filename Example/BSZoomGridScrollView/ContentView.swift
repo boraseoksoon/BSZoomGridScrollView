@@ -32,6 +32,8 @@ struct ContentView: View {
                              powerOfZoomBounce: .regular,
                              numberOfColumns: 200,
                              numberOfRows: 10,
+                             scrollEnableButtonTintColor: .red,
+                             scrollEnableButtonBackgroundColor: .black, 
                              didLongPressItem: { selectedImage in
                                 print("on long press : ", selectedImage)
                                 /// Grab an image user end up choosing.

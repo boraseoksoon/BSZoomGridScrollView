@@ -221,10 +221,66 @@ extension BSZoomGridUIScrollView {
 
 // MARK: - Public instance methods
 ///
+extension BSZoomGridUIScrollView {
+    public func refresh(_ imagesToZoom: [UIImage]) -> Void {
+        self.clear()
+        self.gridBackgroundView = self.createGridBackgroundView(
+            imagesToZoom: imagesToZoom,
+            numberOfGrid: (numberOfColumns, numberOfRows)
+        )
+    }
+}
 
 // MARK: - Private instance methods
 ///
 extension BSZoomGridUIScrollView {
+    private func clear() -> Void {
+        self.gridBackgroundView.removeFromSuperview()
+
+        cells = [:]
+        selectedCell = nil
+    }
+
+    private func createGridBackgroundView(imagesToZoom: [UIImage], numberOfGrid: (Int, Int)) -> UIView {
+        let numberOfColumns = numberOfGrid.0
+        let numberOfRows = numberOfGrid.1
+        
+        let gridBackgroundView = UIView(frame: CGRect(x:0,
+                                                      y:0,
+                                                      width:Int(UIScreen.main.bounds.size.width),
+                                                      height:Int(scrollViewContentHeight)))
+        gridBackgroundView.backgroundColor = .black
+        
+        var imageIndex = 0
+        for j in 0...numberOfColumns {
+            for i in 0...numberOfRows {
+                imageIndex+=1
+                let cellView = UIImageView()
+                cellView.backgroundColor = .black
+                cellView.frame = CGRect(x: CGFloat(i) * absoluteWidth,
+                                        y: CGFloat(j) * absoluteWidth,
+                                        width: absoluteWidth,
+                                        height: absoluteWidth)
+                cellView.layer.borderWidth = 0.2
+                cellView.layer.borderColor = UIColor.black.cgColor
+                
+                if imagesToZoom.count - 1 < imageIndex { imageIndex = 0 }
+                
+                let image = imagesToZoom[imageIndex]
+                cellView.image = image
+                gridBackgroundView.addSubview(cellView)
+                
+                let key = "\(i)|\(j)"
+                cells[key] = cellView
+            }
+        }
+        
+        gridBackgroundView.addGestureRecognizer(longGesture)
+        gridBackgroundView.addGestureRecognizer(panGesture)
+        
+        return gridBackgroundView
+    }
+    
     private func animate(tracking gesture: UIGestureRecognizer, completion: @escaping (_: UIImage) -> Void) {
         let location = gesture.location(in: gridBackgroundView)
         let width = gridBackgroundView.frame.width / CGFloat(numberOfRows)
