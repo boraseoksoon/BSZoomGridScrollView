@@ -7,6 +7,42 @@
 
 BSZoomGridScrollView is a powerful, pure swift iOS UI framework that provides the awesome grid scrollview containing your image array that are able to zoom, tracking your touch area.<br>
 
+Screenshots
+-----------
+
+![BSZoomGridScrollView Screenshot](https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2FBSZoomGridScrollView.png?alt=media&token=062257fc-2aeb-498f-aa33-b179f5e1656b)
+
+At a Glance
+-----------
+
+```swift
+import BSZoomGridScrollView
+
+var body: some View {
+    /// 😊 # Step2. That's it. completed!
+    BSZoomGridScrollView(imagesToZoom: imagesToZoom,
+                         powerOfZoomBounce: .regular,
+                         numberOfColumns: 200,
+                         numberOfRows: 10,
+                         didLongPressItem: { selectedImage in
+                            print("on long press : ", selectedImage)
+                            /// Grab an image user end up choosing.
+                            self.selectedImage = selectedImage
+                            
+                            /// Present!
+                            self.showSelectedImageView.toggle()
+                         },
+                         didFinishDraggingOnItem: { selectedImage in
+                            print("on drag finish : ", selectedImage)
+    })
+    .edgesIgnoringSafeArea(.all)
+    .sheet(isPresented:self.$showSelectedImageView) {
+        /// The example view showing a picked up image.
+        ShowingSelectedImageView(selectedImage: self.selectedImage)
+    }
+}
+```
+
 ## Features
 
 - [x] Designed for SwiftUI, SwiftUI 100% support.
@@ -15,7 +51,7 @@ BSZoomGridScrollView is a powerful, pure swift iOS UI framework that provides th
 - [x] Return selected image by long press, pan gesture out of box. 
 - [x] Grid UI configuration.
 
-![Alt Text](https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2Fgrid-optimize.gif?alt=media&token=59dd94e7-ed0c-45b8-b8bb-d137bcf8959f)
+![Alt Text](https://media.giphy.com/media/jS7ZYuYXRtPk6lHp5F/giphy.gif)
 
 <img src="https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2FBSZoomGridScrollView.png?alt=media&token=062257fc-2aeb-498f-aa33-b179f5e1656b" width=240>
 <br>
@@ -42,7 +78,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 - Swift 5.0 or later
 - Xcode 11.0 or later
 
-## How To Use: 
+
+Getting Started
+--------------- 
 * SwiftUI
 
 ```Swift
@@ -90,7 +128,7 @@ struct ContentView: View {
 ```
 
 * UIKit
-```
+```Swift
 import SwiftUI
 import UIKit
 
@@ -172,8 +210,14 @@ There are four ways to use BSZoomGridScrollView in your project:
 [CocoaPods](http://cocoapods.org/) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries in your projects. See the [Get Started](http://cocoapods.org/#get_started) section for more details.
 
 #### Podfile
+
+First, 
 ```ruby
 pod 'BSZoomGridScrollView'
+```
+then in your root project,
+```ruby
+pod install
 ```
 
 ### Installation with Swift Package Manager (Xcode 11+)

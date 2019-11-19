@@ -52,13 +52,24 @@ public final class BSZoomGridScrollViewController: BSZoomGridBaseViewController 
         b.backgroundColor = .white
         b.setBackgroundImage(UIImage(systemName: "circle"),
                                   for: .normal)
+        
+        b.setBackgroundImage(UIImage(systemName: "circle.fill"),
+                             for: .highlighted)
+        
         b.tintColor = .black
         b.layer.cornerRadius = b.frame.size.width / 2.0
         b.clipsToBounds = true
          
         b.take(for: .touchUpInside) { [unowned self] in
             self.zoomGridScrollView.isScrollEnabled = !self.zoomGridScrollView.isScrollEnabled
-            print("self.zoomGridScrollView.isScrollEnabled : ", self.zoomGridScrollView.isScrollEnabled)
+            
+            self.showToast(
+                message: self.zoomGridScrollView.isScrollEnabled
+                    ? "Scroll enabled. \(RandomEmoji())" : "Scroll locked. \(RandomEmoji())",
+                font: .boldSystemFont(ofSize: 16)
+            )
+            
+            
         }
         
         return b
