@@ -21,28 +21,28 @@ At a Glance
 -----------
 
 ```swift
+/// 🥳 # Step1: let's import!
+import BSZoomGridScrollView
 
-var body: some View {
-    /// 😊 That's it.
-    BSZoomGridScrollView(imagesToZoom: imagesToZoom,
-                         powerOfZoomBounce: .regular,
-                         numberOfColumns: 200,
-                         numberOfRows: 10,
-                         didLongPressItem: { selectedImage in
-                            print("on long press : ", selectedImage)
-                            /// Grab an image user end up choosing.
-                            self.selectedImage = selectedImage
-                            
-                            /// Present!
-                            self.showSelectedImageView.toggle()
-                         },
-                         didFinishDraggingOnItem: { selectedImage in
-                            print("on drag finish : ", selectedImage)
-    })
-    .edgesIgnoringSafeArea(.all)
-    .sheet(isPresented:self.$showSelectedImageView) {
-        /// The example view showing a picked up image.
-        ShowingSelectedImageView(selectedImage: self.selectedImage)
+struct ContentView: View {
+    var itemsToZoom: [Any] = {
+        return (0...1500).compactMap { _ in UIImage(systemName: "smiley") }
+    }()
+
+    var body: some View {
+        /// 😊 # Step2. That's it. completed!
+        BSZoomGridScrollView(itemsToZoom: itemsToZoom,
+                             powerOfZoomBounce: .regular,
+                             isBeingDraggingOnItem:{ selectedImage in
+                                ///
+                             },
+                             didLongPressItem: { selectedImage in
+                                /// Grab an image user end up choosing.
+                             },
+                             didFinishDraggingOnItem: { selectedImage in
+                                /// Grab an image user end up choosing.
+        })
+        .edgesIgnoringSafeArea(.all)
     }
 }
 ```
@@ -75,20 +75,17 @@ Getting Started
 * SwiftUI
 
 ```Swift
+
 import SwiftUI
 
 /// 🥳 # Step1: let's import!
 import BSZoomGridScrollView
 
 struct ContentView: View {
-    var itemsToZoom: [UIImage] = {
-        var images = [UIImage]()
-        for i in 0...29 {
-            images.append(UIImage(named: "yourImage\(i)") ?? UIImage())
-        }
-        return images
+    var itemsToZoom: [Any] = {
+        return (0...1500).compactMap { _ in UIImage(systemName: "smiley") }
     }()
-    
+
     var body: some View {
         /// 😊 # Step2. That's it. completed!
         BSZoomGridScrollView(itemsToZoom: itemsToZoom,
@@ -105,10 +102,12 @@ struct ContentView: View {
         .edgesIgnoringSafeArea(.all)
     }
 }
+
 ```
 
 * UIKit
 ```Swift
+
 ///
 /// To use BSZoomGridScrollView,
 /// Please, Follow steps written in the comments with icon like 😀.
@@ -123,6 +122,13 @@ import UIKit
 import BSZoomGridScrollView
 
 class ViewController: UIViewController {
+    ///
+    // prepare any item array to feed to BSZoomGridScrollViewController.
+    ///
+    private var itemsToZoom: [Any] = {
+        return (0...1500).compactMap { _ in UIImage(systemName: "smiley") }
+    }()
+    
     
     ///
     // 😋 #Step2: declare BSZoomGridScrollView
@@ -155,17 +161,6 @@ class ViewController: UIViewController {
                                               didFinishDraggingOnItem: { [unowned self] selectedImage in
                                                 print("on drag finish : ", selectedImage)
                                               })
-    }()
-    
-    ///
-    // prepare any item array to feed to BSZoomGridScrollViewController.
-    ///
-    private var itemsToZoom: [Any] = {
-        var images = [UIImage]()
-        for i in 0...29 {
-            images.append(UIImage(named: "s\(i)") ?? UIImage())
-        }
-        return images
     }()
     
     ///

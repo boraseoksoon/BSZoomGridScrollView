@@ -20,6 +20,13 @@ import UIKit
 import BSZoomGridScrollView
 
 class ViewController: UIViewController {
+    ///
+    // prepare any item array to feed to BSZoomGridScrollViewController.
+    ///
+    private var itemsToZoom: [Any] = {
+        return (0...1500).compactMap { _ in UIImage(systemName: "smiley") }
+    }()
+    
     
     ///
     // 😋 #Step2: declare BSZoomGridScrollView
@@ -52,17 +59,6 @@ class ViewController: UIViewController {
                                               didFinishDraggingOnItem: { [unowned self] selectedImage in
                                                 print("on drag finish : ", selectedImage)
                                               })
-    }()
-    
-    ///
-    // prepare any item array to feed to BSZoomGridScrollViewController.
-    ///
-    private var itemsToZoom: [Any] = {
-        var images = [UIImage]()
-        for i in 0...29 {
-            images.append(UIImage(named: "s\(i)") ?? UIImage())
-        }
-        return images
     }()
     
     ///
