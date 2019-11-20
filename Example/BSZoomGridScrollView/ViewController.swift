@@ -45,19 +45,10 @@ class ViewController: UIViewController {
                                                  ///
                                               },
                                               didLongPressItem: { [unowned self] selectedImage in
-                                                print("on long press : ", selectedImage)
-                                                /// Grab an image user end up choosing.
-                                                
-                                                // Present the example view containing a selected image.
-                                                let v = ShowingSelectedImageView(selectedImage: selectedImage)
-                                                let vc = UIHostingController(rootView: v)
-                                                
-                                                self.presentedViewController?
-                                                    .present(vc, animated: true, completion: nil)
-                                                
+                                                ///
                                               },
                                               didFinishDraggingOnItem: { [unowned self] selectedImage in
-                                                print("on drag finish : ", selectedImage)
+                                                ///
                                               })
     }()
     
