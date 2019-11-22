@@ -424,6 +424,26 @@ extension BSZoomGridUIScrollView: UIScrollViewDelegate {
         self.centering(scrollView: scrollView)
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
+            //reach bottom
+            print("reach bottom")
+        }
+        
+        if (scrollView.contentOffset.y <= 0){
+            //reach top
+            print("reach top")
+        }
+        
+        if (scrollView.contentOffset.y > 0 && scrollView.contentOffset.y
+            <
+            (scrollView.contentSize.height - scrollView.frame.size.height)){
+            //not top and not bottom
+            print("not top and not bottom")
+        }
+    }
+    
     /// TODO: Resolve conflict when using PanGesture in UIScrollView.
     ///
 //    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
