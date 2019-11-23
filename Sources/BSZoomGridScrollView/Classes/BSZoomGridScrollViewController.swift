@@ -83,6 +83,7 @@ public final class BSZoomGridScrollViewController: BSZoomGridBaseViewController 
                                       numberOfColumns: self.numberOfColumns,
                                       numberOfRows: self.numberOfRows,
                                       isBeingDraggingOnItem: self.isBeingDraggingOnItem,
+                                      didTapOnItem: self.didTapOnItem, 
                                       didLongPressItem: self.didLongPressItem,
                                       didFinishDraggingOnItem: self.didFinishDraggingOnItem)
     }()
