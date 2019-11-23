@@ -48,9 +48,11 @@ class BSZoomGridUIScrollView: UIScrollView {
                   numberOfColumns: Int = 0,
                   numberOfRows: Int = 0,
                   isBeingDraggingOnItem: ((_: UIImage) -> Void)?,
+                  didTapOnItem: ((_: UIImage) -> Void)?,
                   didLongPressItem: ((_: UIImage) -> Void)?,
                   didFinishDraggingOnItem: ((_: UIImage) -> Void)?) {
         /// Closures
+        self.didTapOnItem = didTapOnItem
         self.didLongPressItem = didLongPressItem
         self.didFinishDraggingOnItem = didFinishDraggingOnItem
         self.isBeingDraggingOnItem = isBeingDraggingOnItem
@@ -111,6 +113,7 @@ class BSZoomGridUIScrollView: UIScrollView {
     // MARK: - Private Instance Variables
     /// private accessor goes here.
     private var didLongPressItem: ((_: UIImage) -> Void)?
+    private var didTapOnItem: ((_: UIImage) -> Void)?
     private var didFinishDraggingOnItem: ((_: UIImage) -> Void)?
     private var isBeingDraggingOnItem: ((_: UIImage) -> Void)?
     
@@ -191,6 +194,10 @@ class BSZoomGridUIScrollView: UIScrollView {
     private var cells = [String: UIImageView]()
     private var selectedCell: UIView?
     
+    private lazy var tapGesture: UITapGestureRecognizer = { [unowned self] in
+        UITapGestureRecognizer(target: self, action: #selector(handleTap))
+    }()
+    
     private lazy var longGesture: UILongPressGestureRecognizer = { [unowned self] in
         UILongPressGestureRecognizer(target: self, action: #selector(handleLong))
     }()
@@ -230,6 +237,12 @@ extension BSZoomGridUIScrollView {
     @objc func handlePan(gesture: UIPanGestureRecognizer) {
         self.animate(tracking: gesture) { selectedImage in
             self.didFinishDraggingOnItem?(selectedImage)
+        }
+    }
+    
+    @objc func handleTap(gesture: UIPanGestureRecognizer) {
+        self.animate(tracking: gesture) { selectedImage in
+            self.didTapOnItem?(selectedImage)
         }
     }
 }
@@ -318,6 +331,7 @@ extension BSZoomGridUIScrollView {
         
         gridBackgroundView.addGestureRecognizer(longGesture)
         gridBackgroundView.addGestureRecognizer(panGesture)
+        gridBackgroundView.addGestureRecognizer(tapGesture)
         
         return gridBackgroundView
     }

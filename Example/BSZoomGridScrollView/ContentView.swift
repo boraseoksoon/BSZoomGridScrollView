@@ -32,26 +32,19 @@ struct ContentView: View {
                              powerOfZoomBounce: .regular,
                              scrollEnableButtonTintColor: .blue,
                              scrollEnableButtonBackgroundColor: .black,
-                             isBeingDraggingOnItem:{ selectedImage in
+                             isBeingDraggingOnItem:{ draggingImage in
                                 ///
                              },
-                             didLongPressItem: { selectedImage in
-                                /// Grab an image user end up choosing.
-                                print("on long press : ", selectedImage)
-                                self.selectedImage = selectedImage
-                                
-                                /// Present!
-                                self.showSelectedImageView.toggle()
+                             didTapOnItem: { tapImage in
+                                ///
                              },
-                             didFinishDraggingOnItem: { selectedImage in
-                                /// Grab an image user end up choosing.
-                                print("on drag finish : ", selectedImage)
-        })
+                             didLongPressItem: { longPressedImage in
+                               ///
+                             },
+                             didFinishDraggingOnItem: { draggedFinalImage in
+                               ///
+                             })
         .edgesIgnoringSafeArea(.all)
-        .sheet(isPresented:self.$showSelectedImageView) {
-            /// The example view showing a picked up image.
-            ShowingSelectedImageView(selectedImage: self.selectedImage)
-        }
     }
 }
 

@@ -48,9 +48,11 @@ public class BSZoomGridBaseViewController: UIViewController {
                 scrollEnableButtonTintColor: UIColor = .black,
                 scrollEnableButtonBackgroundColor: UIColor = .white,
                 isBeingDraggingOnItem: ((_: UIImage) -> Void)?,
+                didTapOnItem: ((_: UIImage) -> Void)?,
                 didLongPressItem: ((_: UIImage) -> Void)?,
                 didFinishDraggingOnItem: ((_: UIImage) -> Void)?) {
         /// Closures
+        self.didTapOnItem = didTapOnItem
         self.didLongPressItem = didLongPressItem
         self.didFinishDraggingOnItem = didFinishDraggingOnItem
         self.isBeingDraggingOnItem = isBeingDraggingOnItem
@@ -77,6 +79,7 @@ public class BSZoomGridBaseViewController: UIViewController {
     /// private accessor goes here.
     internal private(set) var didLongPressItem: ((_: UIImage) -> Void)?
     internal private(set) var didFinishDraggingOnItem: ((_: UIImage) -> Void)?
+    internal private(set) var didTapOnItem: ((_: UIImage) -> Void)?
     internal private(set) var isBeingDraggingOnItem: ((_: UIImage) -> Void)?
     
     internal private(set) var itemsToZoom: [Any]

@@ -41,8 +41,10 @@ public struct BSZoomGridScrollView {
                 scrollEnableButtonTintColor: UIColor = .black,
                 scrollEnableButtonBackgroundColor: UIColor = .white,
                 isBeingDraggingOnItem: ((_: UIImage) -> Void)?,
+                didTapOnItem: ((_: UIImage) -> Void)?,
                 didLongPressItem: ((_: UIImage) -> Void)?,
                 didFinishDraggingOnItem: ((_: UIImage) -> Void)?) {
+        self.didTapOnItem = didTapOnItem
         self.didLongPressItem = didLongPressItem
         self.didFinishDraggingOnItem = didFinishDraggingOnItem
         self.isBeingDraggingOnItem = isBeingDraggingOnItem
@@ -65,6 +67,7 @@ public struct BSZoomGridScrollView {
     private let scrollEnableButtonTintColor: UIColor
     private let scrollEnableButtonBackgroundColor: UIColor
     private let isBeingDraggingOnItem: ((_: UIImage) -> Void)?
+    private let didTapOnItem: ((_: UIImage) -> Void)?
     private let didLongPressItem: ((_: UIImage) -> Void)?
     private let didFinishDraggingOnItem: ((_: UIImage) -> Void)?
 }
@@ -85,6 +88,7 @@ extension BSZoomGridScrollView: UIViewControllerRepresentable {
                                                                   scrollEnableButtonTintColor: self.scrollEnableButtonTintColor,
                                                                   scrollEnableButtonBackgroundColor: self.scrollEnableButtonBackgroundColor,
                                                                   isBeingDraggingOnItem: self.isBeingDraggingOnItem,
+                                                                  didTapOnItem:self.didTapOnItem, 
                                                                   didLongPressItem:self.didLongPressItem,
                                                                   didFinishDraggingOnItem:self.didFinishDraggingOnItem)
         return scrollViewController
