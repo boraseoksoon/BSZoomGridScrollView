@@ -86,6 +86,8 @@ class BSZoomGridUIScrollView: UIScrollView {
         alwaysBounceHorizontal = true
         alwaysBounceVertical = true
         
+        isScrollEnabled = false
+        
         maximumZoomScale = .infinity
         minimumZoomScale = 1
         
@@ -322,6 +324,8 @@ extension BSZoomGridUIScrollView {
     
     private func animate(tracking gesture: UIGestureRecognizer,
                          completion: @escaping (_: UIImage) -> Void) {
+        guard !isScrollEnabled else { return }
+        
         let location = gesture.location(in: gridBackgroundView)
         let width = gridBackgroundView.frame.width / CGFloat(numberOfRows)
         
@@ -428,19 +432,19 @@ extension BSZoomGridUIScrollView: UIScrollViewDelegate {
         
         if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
             //reach bottom
-            print("reach bottom")
+            // print("reach bottom")
         }
         
         if (scrollView.contentOffset.y <= 0){
             //reach top
-            print("reach top")
+            // print("reach top")
         }
         
         if (scrollView.contentOffset.y > 0 && scrollView.contentOffset.y
             <
             (scrollView.contentSize.height - scrollView.frame.size.height)){
             //not top and not bottom
-            print("not top and not bottom")
+            // print("not top and not bottom")
         }
     }
     
