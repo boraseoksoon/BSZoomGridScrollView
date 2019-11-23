@@ -98,6 +98,7 @@ public final class BSZoomGridScrollViewController: BSZoomGridBaseViewController 
         self.view.addSubview(self.zoomGridScrollView)
         self.view.addSubview(self.disableOrNotButton)
     }
+    
 }
 
 // MARK: - Public Methods
