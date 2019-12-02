@@ -29,6 +29,7 @@ struct ContentView: View {
                     Image(systemName: "grid")
                     Text("Grid")
             }
-        }.edgesIgnoringSafeArea(.all)
+        }
+        .edgesIgnoringSafeArea(.top)
     }
 }
