@@ -1,6 +1,6 @@
 {
   "name": "BSZoomGridScrollView",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "summary": "Tracking your touch, BSZoomGridScrollView zooms in subviews in the grid-style UIScrollView",
   "description": "Boooooring grid-scrollview that is only good at zooming series of views continuously, tracking your touch..",
   "homepage": "https://github.com/boraseoksoon/BSZoomGridScrollView",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/boraseoksoon/BSZoomGridScrollView.git",
-    "tag": "0.1.1"
+    "tag": "0.1.4"
   },
   "social_media_url": "https://twitter.com/boraseoksoon",
   "swift_versions": "5.1",

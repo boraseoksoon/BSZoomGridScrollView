@@ -5,3 +5,10 @@ target 'BSZoomGridScrollView_Example' do
   pod 'BSZoomGridScrollView', :path => '../'
   
 end
+
+
+target 'SwiftUIExample' do
+  platform :ios, '13.0'
+  pod 'BSZoomGridScrollView', :path => '../'
+  
+end
