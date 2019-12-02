@@ -114,7 +114,7 @@
 		B609DF19176DB2F41F7C88A9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C8E0DF40F5E4AC87BD9CD6A8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D8D2711CE3D7CF1B30A72FE8 /* Pods-BSZoomGridScrollView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSZoomGridScrollView_Tests.release.xcconfig"; path = "Target Support Files/Pods-BSZoomGridScrollView_Tests/Pods-BSZoomGridScrollView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		F4D544B6404620C00939E73B /* BSZoomGridScrollView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BSZoomGridScrollView.podspec; path = ../BSZoomGridScrollView.podspec; sourceTree = "<group>"; };
+		F4D544B6404620C00939E73B /* BSZoomGridScrollView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BSZoomGridScrollView.podspec; path = ../BSZoomGridScrollView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
