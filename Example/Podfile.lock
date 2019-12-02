@@ -1,5 +1,5 @@
 PODS:
-  - BSZoomGridScrollView (0.1.1)
+  - BSZoomGridScrollView (0.1.4)
 
 DEPENDENCIES:
   - BSZoomGridScrollView (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BSZoomGridScrollView: 923ea014b4a2082838fc52e774951be2e24af715
+  BSZoomGridScrollView: 2ad694576a0e12dafa0e35c2f23e897ae591535a
 
-PODFILE CHECKSUM: 69efcad66fc11c27caa9e36e6c56a1e0a672e80f
+PODFILE CHECKSUM: a0b49d6ddff3a37ca5d2ad80461a1f49ed496298
 
 COCOAPODS: 1.8.4

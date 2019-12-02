@@ -41,16 +41,16 @@ class ViewController: UIViewController {
                                               powerOfZoomBounce: .regular,
                                               scrollEnableButtonTintColor: .black,
                                               scrollEnableButtonBackgroundColor: .white,
-                                              isBeingDraggingOnItem:{ [unowned self] draggingImage in
+                                              isBeingDraggingOnItem:{ [unowned self] selectedImage in
                                                  ///
                                               },
                                               didTapOnItem: { [unowned self] tapImage in
                                                  ///
                                               },
-                                              didLongPressItem: { [unowned self] longPressedImage in
+                                              didLongPressItem: { [unowned self] selectedImage in
                                                 ///
                                               },
-                                              didFinishDraggingOnItem: { [unowned self] draggedFinalImage in
+                                              didFinishDraggingOnItem: { [unowned self] selectedImage in
                                                 ///
                                               })
     }()
