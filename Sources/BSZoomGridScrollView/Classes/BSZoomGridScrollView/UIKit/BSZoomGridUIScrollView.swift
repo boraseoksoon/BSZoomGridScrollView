@@ -224,7 +224,8 @@ class BSZoomGridUIScrollView: UIScrollView {
     /// When rows and columns are given 0, use it for row value.
     static let FIX_ROWS: Int = 20
     
-    var isInit = false
+    private var isInit = false
+    
     override func layoutSubviews() {
         if !isInit {
             isInit = true
