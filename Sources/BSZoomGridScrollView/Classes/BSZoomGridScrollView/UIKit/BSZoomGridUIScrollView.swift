@@ -320,7 +320,6 @@ extension BSZoomGridUIScrollView {
                     
                     if let image = itemsToZoom[imageIndex] as? UIImage {
                         cellView.image = image
-                        cellView.contentMode = .scaleAspectFit
                         gridBackgroundView.addSubview(cellView)
                         
                         let key = "\(i)|\(j)"

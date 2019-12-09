@@ -88,11 +88,11 @@ class BSZoomGridUIScrollView: UIScrollView {
         alwaysBounceHorizontal = true
         alwaysBounceVertical = true
         
-        isScrollEnabled = false
+        isScrollEnabled = true
         
         maximumZoomScale = .infinity
         minimumZoomScale = 1
-        
+
         delegate = self
         backgroundColor = .black
         
@@ -223,6 +223,17 @@ class BSZoomGridUIScrollView: UIScrollView {
     
     /// When rows and columns are given 0, use it for row value.
     static let FIX_ROWS: Int = 20
+    
+    var isInit = false
+    override func layoutSubviews() {
+        if !isInit {
+            isInit = true
+            
+            self.setZoomScale(10.0, animated: true)
+            self.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+            
+        }
+    }
 }
 
 // MARK: - Target, Action
