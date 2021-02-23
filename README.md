@@ -226,6 +226,9 @@ let package = Package(
     // ...
 )
 ```
+## Disclamer
+
+It was done for my fun. 
 
 ## Author
 
