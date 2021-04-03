@@ -98,10 +98,10 @@ struct ContentView: View {
                                 ///
                              },
                              didLongPressItem: { selectedImage in
-                                /// Grab an image user end up choosing.
+                                /// Grab an image user ends up choosing.
                              },
                              didFinishDraggingOnItem: { selectedImage in
-                                /// Grab an image user end up choosing.
+                                /// Grab an image user ends up choosing.
         })
         .edgesIgnoringSafeArea(.all)
     }
