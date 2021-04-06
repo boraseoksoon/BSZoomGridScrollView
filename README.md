@@ -6,7 +6,7 @@ Screenshots
 -----------
 
 ![Alt Text](https://media.giphy.com/media/gF23Vtbn9bCTosr1yn/giphy.gif)
-![Alt Text](https://media.giphy.com/media/jS7ZYuYXRtPk6lHp5F/giphy.gif
+![Alt Text](https://media.giphy.com/media/jS7ZYuYXRtPk6lHp5F/giphy.gif)
 
 ![BSZoomGridScrollView Screenshot](https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2Fs4.png?alt=media&token=111d96f0-317c-49f0-b115-fb1592ab6299)
 
