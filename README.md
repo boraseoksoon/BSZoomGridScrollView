@@ -163,7 +163,8 @@ class ViewController: UIViewController {
         ///
         // 😎 That's all. well done.
         ///
-        self.present(zoomGridScrollViewController,
+        
+        self.present(UINavigationController(rootViewController: zoomGridScrollViewController),
                      animated: true,
                      completion: nil)
     }
