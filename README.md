@@ -5,12 +5,15 @@ BSZoomGridScrollView is a powerful, pure swift iOS UI framework that provides th
 Screenshots
 -----------
 
+how it works in youtube : <br>
+[link0](https://youtu.be/QTB7GqZL-L8)
+
+<br>
+
 ![Alt Text](https://media.giphy.com/media/gF23Vtbn9bCTosr1yn/giphy.gif)
 
 ![BSZoomGridScrollView Screenshot](https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSZoomGridScrollView%2Fs4.png?alt=media&token=111d96f0-317c-49f0-b115-fb1592ab6299)
 
-Youtube video URL Link for how it works: <br>
-[link0](https://youtu.be/QTB7GqZL-L8)
 
 At a Glance
 -----------
